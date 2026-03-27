@@ -142,3 +142,19 @@ const validateEmail = (email) => {
 };
 
 console.log('The Gitonga Foundation website loaded successfully!');
+const backToTopButton = document.querySelector('#backToTop');
+
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 300) {
+    backToTopButton.style.opacity = '1';
+  } else {
+    backToTopButton.style.opacity = '0';
+  }
+});
+
+backToTopButton.addEventListener('click', () => {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+});
