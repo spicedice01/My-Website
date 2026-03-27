@@ -371,7 +371,46 @@
             </div>
         </div>
     </section>
+<section class="album-container">
+    <div class="album-card" id="outreachAlbum">
+        <div class="album-cover">
+            <img src="images/community.jpeg" alt="Sanitary Towel Outreach Cover">
+            <div class="album-overlay">
+                <h3>Sanitary Towel Outreach</h3>
+                <p>9 Photos from the Community Event</p>
+                <button onclick="toggleGallery()" class="view-btn">View Album</button>
+            </div>
+        </div>
 
+        <div id="fullGallery" class="gallery-grid" style="display: none;">
+            <img src="images/community.jpeg">
+            <img src="images/community2.jpeg">
+            <img src="images/community3.jpeg">
+            <img src="images/community4.jpeg">
+            <img src="images/community5.jpeg">
+            <img src="images/community6.jpeg">
+            <img src="images/community7.jpeg">
+            <img src="images/community8.jpeg">
+            <img src="images/community9.jpeg">
+        </div>
+    </div>
+</section>
+
+<script>
+function toggleGallery() {
+    var gallery = document.getElementById("fullGallery");
+    var btn = document.querySelector(".view-btn");
+    
+    if (gallery.style.display === "none") {
+        gallery.style.display = "grid";
+        btn.innerHTML = "Close Album";
+    } else {
+        gallery.style.display = "none";
+        btn.innerHTML = "View Album";
+        document.getElementById("outreachAlbum").scrollIntoView({ behavior: 'smooth' });
+    }
+}
+</script>
     <!-- Footer -->
     <footer class="bg-gray-900 text-gray-300 py-16">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -448,46 +487,7 @@
     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" />
   </svg>
 </button>
-   <section class="album-container">
-    <div class="album-card" id="outreachAlbum">
-        <div class="album-cover">
-            <img src="images/community.jpeg" alt="Sanitary Towel Outreach Cover">
-            <div class="album-overlay">
-                <h3>Sanitary Towel Outreach</h3>
-                <p>9 Photos from the Community Event</p>
-                <button onclick="toggleGallery()" class="view-btn">View Album</button>
-            </div>
-        </div>
 
-        <div id="fullGallery" class="gallery-grid" style="display: none;">
-            <img src="images/community.jpeg">
-            <img src="images/community2.jpeg">
-            <img src="images/community3.jpeg">
-            <img src="images/community4.jpeg">
-            <img src="images/community5.jpeg">
-            <img src="images/community6.jpeg">
-            <img src="images/community7.jpeg">
-            <img src="images/community8.jpeg">
-            <img src="images/community9.jpeg">
-        </div>
-    </div>
-</section>
-    </div>
-</section><script>
-function toggleGallery() {
-    var gallery = document.getElementById("fullGallery");
-    var btn = document.querySelector(".view-btn");
-    
-    if (gallery.style.display === "none") {
-        gallery.style.display = "grid";
-        btn.innerHTML = "Close Album";
-    } else {
-        gallery.style.display = "none";
-        btn.innerHTML = "View Album";
-        // Smoothly scroll back to the album top if closing
-        document.getElementById("outreachAlbum").scrollIntoView({ behavior: 'smooth' });
-    }
-}
 </script>
 </body>
 </html>
