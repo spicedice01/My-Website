@@ -409,7 +409,53 @@ function toggleGallery() {
         btn.innerHTML = "View Album";
         document.getElementById("outreachAlbum").scrollIntoView({ behavior: 'smooth' });
     }
+}<section class="album-container">
+    <div class="album-card" id="ceoAlbum">
+        <div class="album-cover">
+            <img src="album/sammy1.jpeg" alt="Dr. Sammy Gitonga - CEO & Founder">
+            <div class="album-overlay">
+                <h3>Dr. Sammy Gitonga</h3>
+                <p>Founder & CEO, Sammy Gitonga Foundation</p>
+                <button onclick="toggleCEOAlbum()" class="view-btn">View Full Gallery</button>
+            </div>
+        </div>
+
+        <div id="ceoGallery" class="gallery-grid" style="display: none;">
+            <img src="album/sammy1.jpeg">
+            <img src="album/sammy2.jpeg">
+            <img src="album/sammy3.jpeg">
+            <img src="album/sammy4.jpeg">
+            <img src="album/sammy5.jpeg">
+            <img src="album/sammy6.jpeg">
+            <img src="album/sammy7.jpeg">
+            <img src="album/sammy8.jpeg">
+            <img src="album/sammy9.jpeg">
+            <img src="album/sammy10.jpeg">
+            <img src="album/sammy11.jpeg">
+            <img src="album/sammy12.jpeg">
+            <img src="album/sammy13.jpeg">
+            <img src="album/sammy14.jpeg">
+            <img src="album/sammy15.jpeg">
+            <img src="album/sammy16.jpeg">
+        </div>
+    </div>
+</section>
+    <script>
+function toggleCEOAlbum() {
+    var gallery = document.getElementById("ceoGallery");
+    var btn = document.querySelector("#ceoAlbum .view-btn");
+    
+    if (gallery.style.display === "none") {
+        gallery.style.display = "grid";
+        btn.innerHTML = "Close Gallery";
+    } else {
+        gallery.style.display = "none";
+        btn.innerHTML = "View Full Gallery";
+        // Scrolls back to the top of the CEO section
+        document.getElementById("ceoAlbum").scrollIntoView({ behavior: 'smooth' });
+    }
 }
+</script>
 </script>
     <!-- Footer -->
     <footer class="bg-gray-900 text-gray-300 py-16">
