@@ -1,7 +1,7 @@
-// Initialize Lucide icons
+// 1. Initialize Lucide icons
 lucide.createIcons();
 
-// Mobile menu toggle
+// 2. Mobile menu toggle
 function toggleMobileMenu() {
     const menu = document.getElementById('mobile-menu');
     menu.classList.toggle('hidden');
@@ -14,30 +14,25 @@ document.querySelectorAll('#mobile-menu a').forEach(link => {
     });
 });
 
-// Navbar scroll effect
+// 3. Navbar scroll effect
 const navbar = document.getElementById('navbar');
-let lastScroll = 0;
 
 window.addEventListener('scroll', () => {
-    const currentScroll = window.pageYOffset;
-    
-    if (currentScroll > 100) {
-        navbar.classList.add('shadow-md');
-        navbar.classList.add('bg-white/95');
+    if (window.scrollY > 100) {
+        navbar.classList.add('shadow-md', 'bg-white/95');
     } else {
         navbar.classList.remove('shadow-md');
     }
-    
-    lastScroll = currentScroll;
 });
 
-// Counter animation
+// 4. Counter animation
 const counters = document.querySelectorAll('.counter');
 const speed = 200;
 
 const animateCounter = (counter) => {
     const target = +counter.getAttribute('data-target');
-    const count = +counter.innerText;
+    const currentText = counter.innerText.replace(/,/g, ''); // Remove commas to calculate
+    const count = +currentText;
     const inc = target / speed;
 
     if (count < target) {
@@ -49,25 +44,19 @@ const animateCounter = (counter) => {
 };
 
 // Intersection Observer for counters
-const observerOptions = {
-    threshold: 0.5
-};
-
-const observer = new IntersectionObserver((entries) => {
+const observerOptions = { threshold: 0.5 };
+const counterObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            const counter = entry.target;
-            animateCounter(counter);
-            observer.unobserve(counter);
+            animateCounter(entry.target);
+            counterObserver.unobserve(entry.target);
         }
     });
 }, observerOptions);
 
-counters.forEach(counter => {
-    observer.observe(counter);
-});
+counters.forEach(counter => counterObserver.observe(counter));
 
-// Smooth scroll for anchor links
+// 5. Smooth scroll for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -81,100 +70,39 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Add active class to nav links based on scroll position
-const sections = document.querySelectorAll('section[id]');
-const navLinks = document.querySelectorAll('nav a[href^="#"]');
+// 6. Back to Top Button Logic (Fixed Duplicates)
+const backToTopButton = document.querySelector('#backToTop');
 
-window.addEventListener('scroll', () => {
-    let current = '';
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
-        if (pageYOffset >= (sectionTop - 200)) {
-            current = section.getAttribute('id');
+if (backToTopButton) {
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+            backToTopButton.style.opacity = '1';
+            backToTopButton.style.pointerEvents = 'auto';
+        } else {
+            backToTopButton.style.opacity = '0';
+            backToTopButton.style.pointerEvents = 'none';
         }
     });
 
-    navLinks.forEach(link => {
-        link.classList.remove('text-teal-600');
-        if (link.getAttribute('href').slice(1) === current) {
-            link.classList.add('text-teal-600');
-        }
+    backToTopButton.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
     });
-});
+}
 
-// Donation button interaction
-document.querySelectorAll('button').forEach(button => {
-    if (button.textContent.includes('Donate') || button.textContent.includes('Volunteer')) {
-        button.addEventListener('click', function() {
-            if (this.textContent.includes('Donate')) {
-                alert('Thank you for your interest in donating! In a production environment, this would redirect to a secure payment gateway.');
-            } else if (this.textContent.includes('Volunteer')) {
-                alert('Thank you for your interest in volunteering! Please email us at volunteer@gitongafoundation.org');
+// 7. Donation & Volunteer button interaction
+document.querySelectorAll('button, a').forEach(el => {
+    if (el.textContent.includes('Donate') || el.textContent.includes('Volunteer')) {
+        el.addEventListener('click', function(e) {
+            // Only alert if it's not a real link (like the nav link)
+            if (this.tagName === 'BUTTON' || this.getAttribute('href') === '#contact') {
+                if (this.textContent.includes('Donate')) {
+                    alert('Thank you! Redirecting to the secure Sammy Gitonga Foundation payment portal...');
+                } else if (this.textContent.includes('Volunteer')) {
+                    alert('Thank you for your heart to serve! Please email us at volunteer@gitongafoundation.org');
+                }
             }
         });
     }
 });
 
-// Lazy loading for images
-if ('IntersectionObserver' in window) {
-    const imageObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const img = entry.target;
-                img.src = img.dataset.src || img.src;
-                img.classList.remove('lazy');
-                imageObserver.unobserve(img);
-            }
-        });
-    });
-
-    document.querySelectorAll('img').forEach(img => {
-        imageObserver.observe(img);
-    });
-}
-
-// Form validation (if forms are added later)
-const validateEmail = (email) => {
-    return email.match(
-        /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-    );
-};
-
-console.log('The Gitonga Foundation website loaded successfully!');
-const backToTopButton = document.querySelector('#backToTop');
-
-window.addEventListener('scroll', () => {
-  if (window.scrollY > 300) {
-    backToTopButton.style.opacity = '1';
-  } else {
-    backToTopButton.style.opacity = '0';
-  }
-});
-
-backToTopButton.addEventListener('click', () => {
-  window.scrollTo({
-    top: 0,
-    behavior: 'smooth'
-  });
-});
-const backToTopButton = document.querySelector('#backToTop');
-
-// Show the button when the user scrolls down 300px
-window.addEventListener('scroll', () => {
-  if (window.scrollY > 300) {
-    backToTopButton.style.opacity = '1';
-    backToTopButton.style.pointerEvents = 'auto';
-  } else {
-    backToTopButton.style.opacity = '0';
-    backToTopButton.style.pointerEvents = 'none';
-  }
-});
-
-// Smooth scroll to top when clicked
-backToTopButton.addEventListener('click', () => {
-  window.scrollTo({
-    top: 0,
-    behavior: 'smooth'
-  });
-});
+console.log('The Gitonga Foundation website scripts are active and optimized!');
