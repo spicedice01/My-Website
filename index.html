@@ -1,193 +1,44 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sammy Gitonga Foundation - Empowering Communities, Changing Lives</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-</head>
-<body class="font-['Inter'] antialiased bg-gray-50 text-gray-900">
-
-    <nav class="fixed w-full bg-white/95 backdrop-blur-sm shadow-sm z-50 transition-all duration-300" id="navbar">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-20">
-                <div class="flex items-center space-x-2">
-                    <div class="w-10 h-10 bg-gradient-to-br from-teal-500 to-blue-600 rounded-lg flex items-center justify-center">
-                        <i data-lucide="heart-handshake" class="w-6 h-6 text-white"></i>
-                    </div>
-                    <span class="text-2xl font-bold text-gray-900">Sammy Gitonga <span class="text-teal-600">Foundation</span></span>
-                </div>
-                
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="#about" class="text-gray-600 hover:text-teal-600 font-medium transition-colors">About</a>
-                    <a href="#programs" class="text-gray-600 hover:text-teal-600 font-medium transition-colors">Programs</a>
-                    <a href="#impact" class="text-gray-600 hover:text-teal-600 font-medium transition-colors">Impact</a>
-                    <a href="#team" class="text-gray-600 hover:text-teal-600 font-medium transition-colors">Team</a>
-                    <a href="#contact" class="bg-teal-600 text-white px-6 py-2.5 rounded-full font-medium hover:bg-teal-700 transition-all transform hover:scale-105 shadow-lg hover:shadow-xl">
-                        Donate Now
-                    </a>
-                </div>
-
-                <button class="md:hidden p-2 rounded-lg hover:bg-gray-100" onclick="toggleMobileMenu()">
-                    <i data-lucide="menu" class="w-6 h-6 text-gray-600"></i>
-                </button>
-            </div>
+<section id="programs" class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <h2 class="text-teal-600 font-semibold text-lg mb-2">Our Programs</h2>
+            <h3 class="text-4xl font-bold text-gray-900 mb-4">How We Create Change</h3>
+            <p class="text-gray-600 text-lg">We focus on sustainable solutions that empower individuals and strengthen the fabric of our community.</p>
         </div>
 
-        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
-            <div class="px-4 pt-2 pb-6 space-y-2">
-                <a href="#about" class="block px-3 py-2 text-gray-600 hover:bg-teal-50 hover:text-teal-600 rounded-md">About</a>
-                <a href="#programs" class="block px-3 py-2 text-gray-600 hover:bg-teal-50 hover:text-teal-600 rounded-md">Programs</a>
-                <a href="#impact" class="block px-3 py-2 text-gray-600 hover:bg-teal-50 hover:text-teal-600 rounded-md">Impact</a>
-                <a href="#team" class="block px-3 py-2 text-gray-600 hover:bg-teal-50 hover:text-teal-600 rounded-md">Team</a>
-                <a href="#contact" class="block px-3 py-2 text-teal-600 font-semibold">Donate Now</a>
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow border border-gray-100">
+                <div class="w-14 h-14 bg-teal-100 rounded-lg flex items-center justify-center text-teal-600 mb-6">
+                    <i data-lucide="graduation-cap" class="w-8 h-8"></i>
+                </div>
+                <h4 class="text-xl font-bold text-gray-900 mb-3">Education Support</h4>
+                <p class="text-gray-600 mb-4">Providing scholarships, school supplies, and mentorship to bright but needy students across Nakuru County.</p>
+                <a href="#contact" class="text-teal-600 font-semibold flex items-center hover:text-teal-700">
+                    Learn More <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
+                </a>
+            </div>
+
+            <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow border border-gray-100">
+                <div class="w-14 h-14 bg-blue-100 rounded-lg flex items-center justify-center text-blue-600 mb-6">
+                    <i data-lucide="heart-pulse" class="w-8 h-8"></i>
+                </div>
+                <h4 class="text-xl font-bold text-gray-900 mb-3">Community Health</h4>
+                <p class="text-gray-600 mb-4">Organizing medical camps and providing essential health resources to underserved rural populations.</p>
+                <a href="#contact" class="text-blue-600 font-semibold flex items-center hover:text-blue-700">
+                    Learn More <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
+                </a>
+            </div>
+
+            <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow border border-gray-100">
+                <div class="w-14 h-14 bg-orange-100 rounded-lg flex items-center justify-center text-orange-600 mb-6">
+                    <i data-lucide="users" class="w-8 h-8"></i>
+                </div>
+                <h4 class="text-xl font-bold text-gray-900 mb-3">Youth Empowerment</h4>
+                <p class="text-gray-600 mb-4">Skills training and entrepreneurship workshops to help young people build independent, successful lives.</p>
+                <a href="#contact" class="text-orange-600 font-semibold flex items-center hover:text-orange-700">
+                    Learn More <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
+                </a>
             </div>
         </div>
-    </nav>
-
-    <section class="relative pt-20 min-h-screen flex items-center overflow-hidden">
-        <div class="absolute inset-0 z-0">
-            <img src="hero-photo.jpeg" alt="Community" class="w-full h-full object-cover">
-            <div class="absolute inset-0 bg-gradient-to-r from-gray-900/90 via-gray-900/70 to-transparent"></div>
-        </div>
-
-        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-            <div class="max-w-2xl">
-                <div class="inline-flex items-center px-4 py-2 bg-teal-500/20 border border-teal-400/30 rounded-full mb-6 backdrop-blur-sm">
-                    <span class="w-2 h-2 bg-teal-400 rounded-full mr-2 animate-pulse"></span>
-                    <span class="text-teal-100 text-sm font-medium">Making a difference since 2015</span>
-                </div>
-                <h1 class="text-5xl md:text-7xl font-bold text-white leading-tight mb-6">
-                    Empowering Communities, <span class="text-teal-400">Changing Lives</span>
-                </h1>
-                <p class="text-xl text-gray-200 mb-8 leading-relaxed">
-                    Sammy Gitonga Foundation is dedicated to creating sustainable change through education, healthcare, and economic empowerment in Nakuru and beyond.
-                </p>
-                <div class="flex flex-col sm:flex-row gap-4">
-                    <a href="#programs" class="inline-flex items-center justify-center px-8 py-4 bg-teal-600 text-white rounded-full font-semibold hover:bg-teal-700 transition-all transform hover:scale-105 shadow-lg">
-                        Our Programs
-                        <i data-lucide="arrow-right" class="ml-2 w-5 h-5"></i>
-                    </a>
-                    <a href="#about" class="inline-flex items-center justify-center px-8 py-4 bg-white/10 backdrop-blur-sm border-2 border-white/30 text-white rounded-full font-semibold hover:bg-white/20 transition-all">
-                        Learn More
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="about" class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <h2 class="text-teal-600 font-semibold text-lg mb-2">Our Mission</h2>
-                <h3 class="text-4xl font-bold text-gray-900 mb-4">Building a Brighter Future Together</h3>
-                <p class="text-gray-600 text-lg">We believe in the power of community-driven development to create lasting, positive change.</p>
-            </div>
-
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="group p-8 bg-gray-50 rounded-2xl hover:bg-teal-50 transition-all duration-300">
-                    <div class="w-14 h-14 bg-teal-100 rounded-xl flex items-center justify-center mb-6">
-                        <i data-lucide="graduation-cap" class="w-7 h-7 text-teal-700"></i>
-                    </div>
-                    <h4 class="text-xl font-bold text-gray-900 mb-3">Education First</h4>
-                    <p class="text-gray-600 leading-relaxed">Providing access to quality education and vocational training to break the cycle of poverty.</p>
-                </div>
-
-                <div class="group p-8 bg-gray-50 rounded-2xl hover:bg-teal-50 transition-all duration-300">
-                    <div class="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center mb-6">
-                        <i data-lucide="stethoscope" class="w-7 h-7 text-blue-700"></i>
-                    </div>
-                    <h4 class="text-xl font-bold text-gray-900 mb-3">Healthcare Access</h4>
-                    <p class="text-gray-600 leading-relaxed">Delivering essential medical services and health education to remote communities.</p>
-                </div>
-
-                <div class="group p-8 bg-gray-50 rounded-2xl hover:bg-teal-50 transition-all duration-300">
-                    <div class="w-14 h-14 bg-orange-100 rounded-xl flex items-center justify-center mb-6">
-                        <i data-lucide="trending-up" class="w-7 h-7 text-orange-700"></i>
-                    </div>
-                    <h4 class="text-xl font-bold text-gray-900 mb-3">Economic Growth</h4>
-                    <p class="text-gray-600 leading-relaxed">Supporting local entrepreneurs and sustainable business development.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="impact" class="py-16 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-gray-900">Our Impact in Action</h2>
-                <p class="mt-4 text-gray-600">Visual proof of our foundation's work in the community.</p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="group relative overflow-hidden rounded-2xl shadow-lg bg-white">
-                    <img src="images/community1.jpeg" alt="Community Outreach" class="w-full h-72 object-cover transition-transform duration-500 group-hover:scale-110">
-                    <div class="p-4"><p class="text-sm font-semibold text-teal-600 uppercase">Education Support</p></div>
-                </div>
-                <div class="group relative overflow-hidden rounded-2xl shadow-lg bg-white">
-                    <img src="images/community2.jpeg" alt="Foundation Activity" class="w-full h-72 object-cover transition-transform duration-500 group-hover:scale-110">
-                    <div class="p-4"><p class="text-sm font-semibold text-teal-600 uppercase">Community Feeding</p></div>
-                </div>
-                <div class="group relative overflow-hidden rounded-2xl shadow-lg bg-white">
-                    <img src="images/community3.jpeg" alt="Local Impact" class="w-full h-72 object-cover transition-transform duration-500 group-hover:scale-110">
-                    <div class="p-4"><p class="text-sm font-semibold text-teal-600 uppercase">Youth Empowerment</p></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer class="bg-gray-900 text-gray-300 py-16">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-4 gap-12 mb-12">
-                <div class="col-span-2">
-                    <div class="flex items-center space-x-2 mb-6">
-                        <div class="w-10 h-10 bg-gradient-to-br from-teal-500 to-blue-600 rounded-lg flex items-center justify-center">
-                            <i data-lucide="heart-handshake" class="w-6 h-6 text-white"></i>
-                        </div>
-                        <span class="text-2xl font-bold text-white"> Sammy Gitonga Foundation</span>
-                    </div>
-                    <p class="text-gray-400 mb-6 max-w-md">Empowering communities through education, healthcare, and sustainable development. Together, we can create a world where everyone thrives.</p>
-                </div>
-                <div>
-                    <h4 class="text-white font-bold mb-6">Quick Links</h4>
-                    <ul class="space-y-3">
-                        <li><a href="#about" class="hover:text-teal-400">About Us</a></li>
-                        <li><a href="#impact" class="hover:text-teal-400">Impact</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="text-white font-bold mb-6">Contact</h4>
-                    <ul class="space-y-3">
-                        <li class="flex items-center"><i data-lucide="mail" class="mr-3 text-teal-500"></i>info@gitongafoundation.org</li>
-                        <li class="flex items-center"><i data-lucide="phone" class="mr-3 text-teal-500"></i>+254 123 456 789</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="border-t border-gray-800 pt-8 text-center md:text-left">
-                <p class="text-gray-500 text-sm">&copy; 2026 Sammy Gitonga Foundation. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
-
-    <button id="backToTop" class="fixed bottom-8 right-8 bg-teal-600 text-white p-3 rounded-full shadow-2xl opacity-0 transition-opacity duration-300 hover:bg-teal-700 focus:outline-none z-50">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" />
-        </svg>
-    </button>
-
-    <script>
-        // Initialize Lucide Icons
-        lucide.createIcons();
-
-        // Mobile Menu Toggle
-        function toggleMobileMenu() {
-            const menu = document.getElementById('mobile-menu');
-            menu.classList.toggle('hidden');
-        }
-    </script>
-    <script src="script.js"></script>
-</body>
-</html>
+    </div>
+</section>
