@@ -81,28 +81,3 @@ a:focus, button:focus {
 #mobile-menu:not(.hidden) {
     max-height: 300px;
 }
-.community-gallery {
-    padding: 40px 20px;
-    background-color: #f9f9f9; /* Light background to separate from site content */
-}
-
-.gallery-grid {
-    display: grid;
-    /* Creates 3 columns on desktop, adjusts to 1 or 2 on mobile */
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 15px; /* Space between the photos */
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.gallery-grid img {
-    width: 100%;
-    height: 250px;
-    object-fit: cover; /* Keeps images uniform without stretching them */
-    border-radius: 8px; /* Optional: rounds the corners slightly */
-    transition: transform 0.3s ease;
-}
-
-.gallery-grid img:hover {
-    transform: scale(1.02); /* Subtle zoom effect when hovering */
-}
