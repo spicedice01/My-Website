@@ -473,6 +473,21 @@
     </div>
 </section>
     </div>
-</section>
+</section><script>
+function toggleGallery() {
+    var gallery = document.getElementById("fullGallery");
+    var btn = document.querySelector(".view-btn");
+    
+    if (gallery.style.display === "none") {
+        gallery.style.display = "grid";
+        btn.innerHTML = "Close Album";
+    } else {
+        gallery.style.display = "none";
+        btn.innerHTML = "View Album";
+        // Smoothly scroll back to the album top if closing
+        document.getElementById("outreachAlbum").scrollIntoView({ behavior: 'smooth' });
+    }
+}
+</script>
 </body>
 </html>
