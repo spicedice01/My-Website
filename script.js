@@ -158,3 +158,23 @@ backToTopButton.addEventListener('click', () => {
     behavior: 'smooth'
   });
 });
+const backToTopButton = document.querySelector('#backToTop');
+
+// Show the button when the user scrolls down 300px
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 300) {
+    backToTopButton.style.opacity = '1';
+    backToTopButton.style.pointerEvents = 'auto';
+  } else {
+    backToTopButton.style.opacity = '0';
+    backToTopButton.style.pointerEvents = 'none';
+  }
+});
+
+// Smooth scroll to top when clicked
+backToTopButton.addEventListener('click', () => {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+});
