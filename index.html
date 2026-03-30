@@ -386,12 +386,12 @@
                 </div>
             </div>
         </section>
-
-    </div> <script>
+   </div> <script>
     function toggleGallery() {
         var gallery = document.getElementById("fullGallery");
         var btn = document.querySelector("#outreachAlbum .view-btn");
-        if (gallery.style.display === "none") {
+        
+        if (gallery.style.display === "none" || gallery.style.display === "") {
             gallery.style.display = "grid";
             btn.innerHTML = "Close Album";
         } else {
@@ -404,7 +404,8 @@
     function toggleCEOAlbum() {
         var gallery = document.getElementById("ceoGallery");
         var btn = document.querySelector("#ceoAlbum .view-btn");
-        if (gallery.style.display === "none") {
+        
+        if (gallery.style.display === "none" || gallery.style.display === "") {
             gallery.style.display = "grid";
             btn.innerHTML = "Close Gallery";
         } else {
@@ -412,6 +413,8 @@
             btn.innerHTML = "View Full Gallery";
             document.getElementById("ceoAlbum").scrollIntoView({ behavior: 'smooth' });
         }
+    }
+    </script>
         }
     </script>
     ```
