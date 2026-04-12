@@ -424,7 +424,34 @@ function toggleSimpleGallery() {
     } else {
         grid.style.display = "none";
     }
-}
+}<section id="featured-media" class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold text-gray-900 mb-2">Featured Videos</h2>
+            <div class="w-20 h-1 bg-teal-500 mx-auto"></div>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="group bg-gray-50 rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300">
+                <div class="aspect-video">
+                    <iframe 
+                        width="100%" 
+                        height="100%" 
+                        src="https://www.youtube.com/embed/VUPEe1chPhc" 
+                        title="Featured Video 1"
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="p-4">
+                    <h3 class="font-bold text-gray-800 text-lg">Featured Video 1</h3>
+                </div>
+            </div>
+
+            </div>
+    </div>
+</section>
 </script>
     <!-- Footer -->
     <footer class="bg-gray-900 text-gray-300 py-16">
