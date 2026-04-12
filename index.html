@@ -328,135 +328,93 @@
                             <h5 class="font-bold text-gray-900">Amina Hassan</h5>
                             <p class="text-gray-600 text-sm">Entrepreneur & Business Owner</p>
                         </div>
-                    </div>
-                </div>
-            </div>
-     <div class="bg-gray-50 pb-20">
-        
-        <section class="album-container max-w-7xl mx-auto px-4 mb-12">
-            <div class="album-card bg-white rounded-2xl shadow-lg overflow-hidden" id="outreachAlbum">
-                <div class="album-cover relative group cursor-pointer" onclick="toggleGallery()">
-                    <img src="images/community.jpeg" alt="Outreach Cover" class="w-full h-[400px] object-cover transition-transform group-hover:scale-105">
-                    <div class="absolute inset-0 bg-black/60 flex flex-col justify-center items-center text-center p-6">
-                        <h3 class="text-3xl font-bold text-white mb-2">Sanitary Towel Outreach</h3>
-                        <p class="text-teal-200 mb-4">9 Photos from the Community Event</p>
-                        <button class="view-btn bg-teal-600 text-white px-8 py-3 rounded-full font-bold hover:bg-teal-700 transition-all">View Album</button>
-                    </div>
-                </div>
-                <div id="fullGallery" class="grid grid-cols-2 md:grid-cols-3 gap-4 p-6" style="display: none;">
-                    <img src="images/community.jpeg" class="rounded-lg shadow-sm">
-                    <img src="images/community2.jpeg" class="rounded-lg shadow-sm">
-                    <img src="images/community3.jpeg" class="rounded-lg shadow-sm">
-                    <img src="images/community4.jpeg" class="rounded-lg shadow-sm">
-                    <img src="images/community5.jpeg" class="rounded-lg shadow-sm">
-                    <img src="images/community6.jpeg" class="rounded-lg shadow-sm">
-                    <img src="images/community7.jpeg" class="rounded-lg shadow-sm">
-                    <img src="images/community8.jpeg" class="rounded-lg shadow-sm">
-                    <img src="images/community9.jpeg" class="rounded-lg shadow-sm">
-                </div>
-            </div>
-        </section>
-
-        <section class="album-container max-w-7xl mx-auto px-4">
-            <div class="album-card bg-white rounded-2xl shadow-lg overflow-hidden" id="ceoAlbum">
-                <div class="album-cover relative group cursor-pointer" onclick="toggleCEOAlbum()">
-                    <img src="album/sammy1.jpeg" alt="Dr. Sammy Gitonga" class="w-full h-[400px] object-cover transition-transform group-hover:scale-105">
-                    <div class="absolute inset-0 bg-black/60 flex flex-col justify-center items-center text-center p-6">
-                        <h3 class="text-3xl font-bold text-white mb-2">Dr. Sammy Gitonga</h3>
-                        <p class="text-teal-200 mb-4">Founder & CEO Gallery (16 Photos)</p>
-                        <button class="view-btn bg-teal-600 text-white px-8 py-3 rounded-full font-bold hover:bg-teal-700 transition-all">View Full Gallery</button>
-                    </div>
-            document.getElementById("outreachAlbum").scrollIntoView({ behavior: 'smooth' });
-        }
-    }
-
-    function toggleCEOAlbum() {
-        var gallery = document.getElementById("ceoGallery");
-        var btn = document.querySelector("#ceoAlbum .view-btn");
-        
-        if (gallery.style.display === "none" || gallery.style.display === "") {
-            gallery.style.display = "grid";
-            btn.innerHTML = "Close Gallery";
-        } else {
-            gallery.style.display = "none";
-            btn.innerHTML = "View Full Gallery";
-            document.getElementById("ceoAlbum").scrollIntoView({ behavior: 'smooth' });
-        }
-    }
-    </script>
-<script>
-function toggleSimpleGallery() {
-    var grid = document.getElementById("simpleGrid");
-    if (grid.style.display === "none") {
-        grid.style.display = "grid";
-    } else {
-        grid.style.display = "none";
-    }
-}<section id="featured-media" class="py-16 bg-white">
-    <div class="max-w-7xl mx-auto px-4">
-        <div class="text-center mb-12">
-            <h2 class="text-3xl font-bold text-gray-900 mb-2">Featured Videos</h2>
-            <div class="w-20 h-1 bg-teal-500 mx-auto"></div>
-        </div>
-        <div class="group bg-gray-50 rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300">
-    <div class="aspect-video">
-        <iframe 
-            width="100%" 
-            height="100%" 
-            src="https://www.youtube.com/embed/VUPEe1chPhc" 
-            title="Featured Video 1"
-            frameborder="0" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-            allowfullscreen>
-        </iframe>
-    </div>
-    <div class="p-4">
-        <h3 class="font-bold text-gray-800 text-lg">Featured Video 1</h3>
-    </div>
-</div>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div class="group bg-gray-50 rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300">
-                <div class="aspect-video">
-                    <iframe 
-                        width="100%" 
-                        height="100%" 
-                        src="https://www.youtube.com/embed/VUPEe1chPhc" 
-                        title="Featured Video 1"
-                        frameborder="0" 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                        allowfullscreen>
-                    </iframe>
-                </div>
-                <div class="p-4">
-                    <h3 class="font-bold text-gray-800 text-lg">Featured Video 1</h3>
-                </div>
-            </div>
-
-            </div>
-    </div>
-</section>
-</script>
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-gray-300 py-16">
+                   <section class="py-20 bg-gray-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-4 gap-12 mb-12">
-                <div class="col-span-2">
-                    <div class="flex items-center space-x-2 mb-6">
-                        <div class="w-10 h-10 bg-gradient-to-br from-teal-500 to-blue-600 rounded-lg flex items-center justify-center">
-                            <i data-lucide="heart-handshake" class="w-6 h-6 text-white"></i>
+            <div class="text-center mb-12">
+                <h2 class="text-teal-600 font-semibold text-lg mb-2">Testimonials</h2>
+                <h3 class="text-4xl font-bold text-gray-900">Stories of Hope</h3>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white p-8 rounded-2xl shadow-md relative">
+                    <i data-lucide="quote" class="w-10 h-10 text-teal-200 absolute top-6 left-6"></i>
+                    <p class="text-gray-700 text-lg italic mb-6 relative z-10 pt-8">"The scholarship from Gitonga Foundation changed my life. I'm now the first in my family to attend university and study medicine."</p>
+                    <div class="flex items-center">
+                        <img src="http://static.photos/people/200x200/444" alt="Beneficiary" class="w-12 h-12 rounded-full object-cover mr-4">
+                        <div>
+                            <h5 class="font-bold text-gray-900">Mary Chemutai</h5>
+                            <p class="text-gray-600 text-sm">Medical Student, Class of 2024</p>
                         </div>
-                        <span class="text-2xl font-bold text-white"> Sammy Gitonga Foundation</span>
                     </div>
-                    <p class="text-gray-400 mb-6 max-w-md">Empowering communities through education, healthcare, and sustainable development. Together, we can create a world where everyone has the opportunity to thrive.</p>
-                    <div class="flex space-x-4">
-                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-teal-600 transition-colors">
-                            <i data-lucide="facebook" class="w-5 h-5"></i>
-                        </a>
-                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-teal-600 transition-colors">
-                            <i data-lucide="twitter" class="w-5 h-5"></i>
-                        </a>
-                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-teal-600 transition-colors">
-                            <i data-lucide="instagram" class="w-5 h-5"></i>
+                </div>
+
+                <div class="bg-white p-8 rounded-2xl shadow-md relative">
+                    <i data-lucide="quote" class="w-10 h-10 text-teal-200 absolute top-6 left-6"></i>
+                    <p class="text-gray-700 text-lg italic mb-6 relative z-10 pt-8">"Thanks to the microfinance program, I was able to start my own tailoring business and now employ five other women."</p>
+                    <div class="flex items-center">
+                        <img src="http://static.photos/people/200x200/555" alt="Beneficiary" class="w-12 h-12 rounded-full object-cover mr-4">
+                        <div>
+                            <h5 class="font-bold text-gray-900">Amina Hassan</h5>
+                            <p class="text-gray-600 text-sm">Entrepreneur & Business Owner</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="featured-media" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-2">Featured Videos</h2>
+                <div class="w-20 h-1 bg-teal-500 mx-auto"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="group bg-gray-50 rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300">
+                    <div class="aspect-video">
+                        <iframe 
+                            width="100%" 
+                            height="100%" 
+                            src="https://www.youtube.com/embed/VUPEe1chPhc" 
+                            title="Featured Video 1"
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-gray-800 text-lg">Featured Video 1</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function toggleGallery() {
+            var gallery = document.getElementById("fullGallery");
+            if (gallery.style.display === "none" || gallery.style.display === "") {
+                gallery.style.display = "grid";
+            } else {
+                gallery.style.display = "none";
+            }
+        }
+
+        function toggleCEOAlbum() {
+            var gallery = document.getElementById("ceoGallery");
+            var btn = document.querySelector("#ceoAlbum .view-btn");
+            
+            if (gallery && (gallery.style.display === "none" || gallery.style.display === "")) {
+                gallery.style.display = "grid";
+                btn.innerHTML = "Close Gallery";
+            } else if (gallery) {
+                gallery.style.display = "none";
+                btn.innerHTML = "View Full Gallery";
+                document.getElementById("ceoAlbum").scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+    </script>
                         </a>
                         <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-teal-600 transition-colors">
                             <i data-lucide="linkedin" class="w-5 h-5"></i>
