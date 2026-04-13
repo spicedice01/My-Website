@@ -88,7 +88,17 @@ if (backToTopButton) {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 }
-
+function toggleEmpowerment() {
+            const gallery = document.getElementById("empowermentGallery");
+            const btn = document.querySelector("#empowermentAlbum button");
+            if (gallery.classList.contains('hidden')) {
+                gallery.classList.replace('hidden', 'grid');
+                btn.innerHTML = "Close Album";
+            } else {
+                gallery.classList.replace('grid', 'hidden');
+                btn.innerHTML = "View Album";
+            }
+        }
 // 7. Donation & Volunteer button interaction
 document.querySelectorAll('button, a').forEach(el => {
     if (el.textContent.includes('Donate') || el.textContent.includes('Volunteer')) {
