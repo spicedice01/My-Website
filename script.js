@@ -112,15 +112,22 @@ function toggleGallery() {
     }
 }
 
-function toggleCEOAlbum() {
-    const gallery = document.getElementById("ceoGallery");
-    const btn = document.querySelector("#ceoAlbum button");
-    if (gallery.classList.contains('hidden')) {
-        gallery.classList.replace('hidden', 'grid');
-        btn.innerHTML = "Close Gallery";
+function toggleEmpowerment() {
+    const gallery = document.getElementById("empowermentGallery");
+    const btn = document.querySelector("#empowermentAlbum button");
+    
+    if (gallery) {
+        if (gallery.classList.contains('hidden')) {
+            gallery.classList.remove('hidden');
+            gallery.classList.add('grid');
+            btn.innerHTML = "Close Album";
+        } else {
+            gallery.classList.remove('grid');
+            gallery.classList.add('hidden');
+            btn.innerHTML = "View Album";
+        }
     } else {
-        gallery.classList.replace('grid', 'hidden');
-        btn.innerHTML = "View Full Gallery";
+        console.log("Error: Could not find empowermentGallery ID");
     }
 }
 // 7. Donation & Volunteer button interaction
