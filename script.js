@@ -91,55 +91,52 @@ if (backToTopButton) {
 
 // --- ALL ALBUM TOGGLES ---
 
-function toggleEmpowerment() {
-    const gallery = document.getElementById("empowermentGallery");
-    const btn = document.querySelector("#empowermentAlbum button");
-    if (gallery.classList.contains('hidden')) {
-        gallery.classList.replace('hidden', 'grid');
-        btn.innerHTML = "Close Album";
-    } else {
-        gallery.classList.replace('grid', 'hidden');
-        btn.innerHTML = "View Album";
-    }
-}
+<script>
+        // Toggle for Mobile Navigation
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
 
-function toggleGallery() {
-    const gallery = document.getElementById("fullGallery");
-    const btn = document.querySelector("#outreachAlbum button");
-    if (gallery.classList.contains('hidden')) {
-        gallery.classList.replace('hidden', 'grid');
-        btn.innerHTML = "Close Album";
-    } else {
-        gallery.classList.replace('grid', 'hidden');
-        btn.innerHTML = "View Album";
-    }
-}
-
-function toggleCEOAlbum() {
-    const gallery = document.getElementById("ceoGallery");
-    const btn = document.querySelector("#ceoAlbum button");
-    if (gallery.classList.contains('hidden')) {
-        gallery.classList.replace('hidden', 'grid');
-        btn.innerHTML = "Close Gallery";
-    } else {
-        gallery.classList.replace('grid', 'hidden');
-        btn.innerHTML = "View Full Gallery";
-    }
-}
-// 7. Donation & Volunteer button interaction
-document.querySelectorAll('button, a').forEach(el => {
-    if (el.textContent.includes('Donate') || el.textContent.includes('Volunteer')) {
-        el.addEventListener('click', function(e) {
-            // Only alert if it's not a real link (like the nav link)
-            if (this.tagName === 'BUTTON' || this.getAttribute('href') === '#contact') {
-                if (this.textContent.includes('Donate')) {
-                    alert('Thank you! Redirecting to the secure Sammy Gitonga Foundation payment portal...');
-                } else if (this.textContent.includes('Volunteer')) {
-                    alert('Thank you for your heart to serve! Please email us at volunteer@gitongafoundation.org');
-                }
+        // Toggle for Sanitary Towel Outreach (Outreach Album)
+        function toggleGallery() {
+            const gallery = document.getElementById("fullGallery");
+            const btn = document.querySelector("#outreachAlbum button");
+            if (gallery.classList.contains('hidden')) {
+                gallery.classList.replace('hidden', 'grid');
+                btn.innerHTML = "Close Album";
+            } else {
+                gallery.classList.replace('grid', 'hidden');
+                btn.innerHTML = "View Album";
             }
-        });
-    }
-});
+        }
 
-console.log('The Gitonga Foundation website scripts are active and optimized!');
+        // Toggle for CEO / Founder Gallery
+        function toggleCEOAlbum() {
+            const gallery = document.getElementById("ceoGallery");
+            const btn = document.querySelector("#ceoAlbum button");
+            if (gallery.classList.contains('hidden')) {
+                gallery.classList.replace('hidden', 'grid');
+                btn.innerHTML = "Close Gallery";
+            } else {
+                gallery.classList.replace('grid', 'hidden');
+                btn.innerHTML = "View Full Gallery";
+            }
+        }
+
+        // Toggle for Community Empowerment (THE LINE YOU WERE MISSING)
+        function toggleEmpowerment() {
+            const gallery = document.getElementById("empowermentGallery");
+            const btn = document.querySelector("#empowermentAlbum button");
+            if (gallery.classList.contains('hidden')) {
+                gallery.classList.replace('hidden', 'grid');
+                btn.innerHTML = "Close Album";
+            } else {
+                gallery.classList.replace('grid', 'hidden');
+                btn.innerHTML = "View Album";
+            }
+        }
+
+        // Initialize Icons
+        lucide.createIcons();
+    </script>
