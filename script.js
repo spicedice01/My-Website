@@ -74,4 +74,20 @@
     }, { threshold: 0.5 });
 
     counters.forEach(counter => counterObserver.observe(counter));
+// Add this to the end of your script.js file
+const backToTop = document.getElementById('backToTop');
+
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 500) {
+        backToTop.classList.remove('opacity-0', 'pointer-events-none');
+        backToTop.classList.add('opacity-100', 'pointer-events-auto');
+    } else {
+        backToTop.classList.add('opacity-0', 'pointer-events-none');
+        backToTop.classList.remove('opacity-100', 'pointer-events-auto');
+    }
+});
+
+backToTop.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+});
 </script>
