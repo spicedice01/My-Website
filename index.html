@@ -567,5 +567,31 @@
 <button id="backToTop" class="fixed bottom-8 right-8 bg-teal-600 text-white p-3 rounded-full shadow-2xl opacity-0 transition-opacity duration-300 pointer-events-none z-50">
     <i data-lucide="arrow-up" class="w-6 h-6"></i>
 </button>
+  <div id="donateModal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4 bg-gray-900/60 backdrop-blur-sm transition-all">
+    <div class="bg-white rounded-2xl shadow-2xl max-w-md w-full overflow-hidden transform transition-all scale-95 opacity-0" id="modalContent">
+        <div class="p-8 text-center">
+            <div class="w-16 h-16 bg-teal-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                <i data-lucide="heart" class="w-8 h-8 text-teal-600"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-900 mb-2">Support Our Mission</h3>
+            <p class="text-gray-600 mb-8">Thank you for your willingness to give. To ensure your contribution is handled securely and directed to the right program, please reach out to us directly.</p>
+            
+            <div class="space-y-4 mb-8">
+                <a href="tel:+12259638271" class="flex items-center justify-center space-x-3 p-4 bg-gray-50 rounded-xl hover:bg-teal-50 transition-colors group">
+                    <i data-lucide="phone" class="w-5 h-5 text-teal-600"></i>
+                    <span class="font-semibold text-gray-800 group-hover:text-teal-700">+1 (225) 963-8271</span>
+                </a>
+                <a href="mailto:gitongasammy06@gmail.com" class="flex items-center justify-center space-x-3 p-4 bg-gray-50 rounded-xl hover:bg-teal-50 transition-colors group">
+                    <i data-lucide="mail" class="w-5 h-5 text-teal-600"></i>
+                    <span class="font-semibold text-gray-800 group-hover:text-teal-700">gitongasammy06@gmail.com</span>
+                </a>
+            </div>
+
+            <button onclick="closeDonateModal()" class="w-full py-3 text-gray-500 font-medium hover:text-gray-700 transition-colors">
+                Close
+            </button>
+        </div>
+    </div>
+</div>  
 </body>
 </html>
