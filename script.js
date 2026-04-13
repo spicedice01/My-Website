@@ -10,13 +10,13 @@ function toggleMobileMenu() {
 // Close mobile menu when clicking on a link
 document.querySelectorAll('#mobile-menu a').forEach(link => {
     link.addEventListener('click', () => {
-        document.getElementById('mobile-menu').classList.add('hidden');
+        const menu = document.getElementById('mobile-menu');
+        if (menu) menu.classList.add('hidden');
     });
 });
 
 // 3. Navbar scroll effect
 const navbar = document.getElementById('navbar');
-
 window.addEventListener('scroll', () => {
     if (window.scrollY > 100) {
         navbar.classList.add('shadow-md', 'bg-white/95');
@@ -31,19 +31,17 @@ const speed = 200;
 
 const animateCounter = (counter) => {
     const target = +counter.getAttribute('data-target');
-    const currentText = counter.innerText.replace(/,/g, ''); // Remove commas to calculate
-    const count = +currentText;
+    const count = +counter.innerText.replace(/,/g, '');
     const inc = target / speed;
 
     if (count < target) {
-        counter.innerText = Math.ceil(count + inc);
+        counter.innerText = Math.ceil(count + inc).toLocaleString();
         setTimeout(() => animateCounter(counter), 20);
     } else {
         counter.innerText = target.toLocaleString();
     }
 };
 
-// Intersection Observer for counters
 const observerOptions = { threshold: 0.5 };
 const counterObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -56,87 +54,44 @@ const counterObserver = new IntersectionObserver((entries) => {
 
 counters.forEach(counter => counterObserver.observe(counter));
 
-// 5. Smooth scroll for anchor links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-        }
-    });
-});
-
-// 6. Back to Top Button Logic
+// 5. Back to Top Button
 const backToTopButton = document.querySelector('#backToTop');
-
 if (backToTopButton) {
     window.addEventListener('scroll', () => {
-        if (window.scrollY > 300) {
-            backToTopButton.style.opacity = '1';
-            backToTopButton.style.pointerEvents = 'auto';
-        } else {
-            backToTopButton.style.opacity = '0';
-            backToTopButton.style.pointerEvents = 'none';
-        }
+        backToTopButton.style.opacity = window.scrollY > 300 ? '1' : '0';
+        backToTopButton.style.pointerEvents = window.scrollY > 300 ? 'auto' : 'none';
     });
-
     backToTopButton.addEventListener('click', () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 }
 
-// --- ALL ALBUM TOGGLES ---
+// 6. Album Toggles
+function toggleGallery() {
+    const gallery = document.getElementById("fullGallery");
+    const btn = document.querySelector("#outreachAlbum button");
+    toggleVisibility(gallery, btn);
+}
 
-<script>
-        // Toggle for Mobile Navigation
-        function toggleMobileMenu() {
-            const menu = document.getElementById('mobile-menu');
-            menu.classList.toggle('hidden');
-        }
+function toggleCEOAlbum() {
+    const gallery = document.getElementById("ceoGallery");
+    const btn = document.querySelector("#ceoAlbum button");
+    toggleVisibility(gallery, btn, "View Full Gallery", "Close Gallery");
+}
 
-        // Toggle for Sanitary Towel Outreach (Outreach Album)
-        function toggleGallery() {
-            const gallery = document.getElementById("fullGallery");
-            const btn = document.querySelector("#outreachAlbum button");
-            if (gallery.classList.contains('hidden')) {
-                gallery.classList.replace('hidden', 'grid');
-                btn.innerHTML = "Close Album";
-            } else {
-                gallery.classList.replace('grid', 'hidden');
-                btn.innerHTML = "View Album";
-            }
-        }
+function toggleEmpowerment() {
+    const gallery = document.getElementById("empowermentGallery");
+    const btn = document.querySelector("#empowermentAlbum button");
+    toggleVisibility(gallery, btn);
+}
 
-        // Toggle for CEO / Founder Gallery
-        function toggleCEOAlbum() {
-            const gallery = document.getElementById("ceoGallery");
-            const btn = document.querySelector("#ceoAlbum button");
-            if (gallery.classList.contains('hidden')) {
-                gallery.classList.replace('hidden', 'grid');
-                btn.innerHTML = "Close Gallery";
-            } else {
-                gallery.classList.replace('grid', 'hidden');
-                btn.innerHTML = "View Full Gallery";
-            }
-        }
-
-        // Toggle for Community Empowerment (THE LINE YOU WERE MISSING)
-        function toggleEmpowerment() {
-            const gallery = document.getElementById("empowermentGallery");
-            const btn = document.querySelector("#empowermentAlbum button");
-            if (gallery.classList.contains('hidden')) {
-                gallery.classList.replace('hidden', 'grid');
-                btn.innerHTML = "Close Album";
-            } else {
-                gallery.classList.replace('grid', 'hidden');
-                btn.innerHTML = "View Album";
-            }
-        }
-
-        // Initialize Icons
-        lucide.createIcons();
-    </script>
+// Helper to keep code clean
+function toggleVisibility(gallery, btn, openText = "View Album", closeText = "Close Album") {
+    if (gallery.classList.contains('hidden')) {
+        gallery.classList.replace('hidden', 'grid');
+        btn.innerHTML = closeText;
+    } else {
+        gallery.classList.replace('grid', 'hidden');
+        btn.innerHTML = openText;
+    }
+}
