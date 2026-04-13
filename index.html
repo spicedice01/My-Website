@@ -447,35 +447,54 @@
     </section>
 
     <script>
-        function toggleMobileMenu() {
-            const menu = document.getElementById('mobile-menu');
-            menu.classList.toggle('hidden');
-        }
+    // 1. Initialize the icons (like the heart and menu)
+    lucide.createIcons();
 
-        function toggleGallery() {
-            const gallery = document.getElementById("fullGallery");
-            const btn = document.querySelector("#outreachAlbum button");
-            if (gallery.classList.contains('hidden')) {
-                gallery.classList.replace('hidden', 'grid');
-                btn.innerHTML = "Close Album";
-            } else {
-                gallery.classList.replace('grid', 'hidden');
-                btn.innerHTML = "View Album";
-            }
-        }
+    // 2. Open/Close the Mobile Menu
+    function toggleMobileMenu() {
+        const menu = document.getElementById('mobile-menu');
+        menu.classList.toggle('hidden');
+    }
 
-        function toggleCEOAlbum() {
-            const gallery = document.getElementById("ceoGallery");
-            const btn = document.querySelector("#ceoAlbum button");
-            if (gallery.classList.contains('hidden')) {
-                gallery.classList.replace('hidden', 'grid');
-                btn.innerHTML = "Close Gallery";
-            } else {
-                gallery.classList.replace('grid', 'hidden');
-                btn.innerHTML = "View Full Gallery";
-            }
+    // 3. Open/Close the Outreach Album
+    function toggleGallery() {
+        const gallery = document.getElementById("fullGallery");
+        const btn = document.querySelector("#outreachAlbum button");
+        if (gallery.classList.contains('hidden')) {
+            gallery.classList.replace('hidden', 'grid');
+            btn.innerHTML = "Close Album";
+        } else {
+            gallery.classList.replace('grid', 'hidden');
+            btn.innerHTML = "View Album";
         }
-        lucide.createIcons();
-    </script>
+    }
+
+    // 4. Open/Close the CEO Album
+    function toggleCEOAlbum() {
+        const gallery = document.getElementById("ceoGallery");
+        const btn = document.querySelector("#ceoAlbum button");
+        if (gallery.classList.contains('hidden')) {
+            gallery.classList.replace('hidden', 'grid');
+            btn.innerHTML = "Close Gallery";
+        } else {
+            gallery.classList.replace('grid', 'hidden');
+            btn.innerHTML = "View Full Gallery";
+        }
+    }
+
+    // 5. Open/Close the Community Empowerment Album (THIS WAS MISSING)
+    function toggleEmpowerment() {
+        const gallery = document.getElementById("empowermentGallery");
+        const btn = document.querySelector("#empowermentAlbum button");
+        if (gallery.classList.contains('hidden')) {
+            gallery.classList.replace('hidden', 'grid');
+            btn.innerHTML = "Close Album";
+        } else {
+            gallery.classList.replace('grid', 'hidden');
+            btn.innerHTML = "View Album";
+        }
+    }
+</script>
+   
 </body>
 </html>
