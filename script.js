@@ -90,4 +90,41 @@ window.addEventListener('scroll', () => {
 backToTop.addEventListener('click', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 });
+// Function to Open Modal
+function openDonateModal(e) {
+    if (e) e.preventDefault(); // Prevents the page from jumping
+    const modal = document.getElementById('donateModal');
+    const content = document.getElementById('modalContent');
+    
+    modal.classList.remove('hidden');
+    modal.classList.add('flex');
+    
+    // Small delay to allow animation to trigger
+    setTimeout(() => {
+        content.classList.remove('scale-95', 'opacity-0');
+        content.classList.add('scale-100', 'opacity-100');
+    }, 10);
+}
+
+// Function to Close Modal
+function closeDonateModal() {
+    const modal = document.getElementById('donateModal');
+    const content = document.getElementById('modalContent');
+    
+    content.classList.remove('scale-100', 'opacity-100');
+    content.classList.add('scale-95', 'opacity-0');
+    
+    setTimeout(() => {
+        modal.classList.remove('flex');
+        modal.classList.add('hidden');
+    }, 300);
+}
+
+// Close modal if user clicks outside the white box
+window.onclick = function(event) {
+    const modal = document.getElementById('donateModal');
+    if (event.target == modal) {
+        closeDonateModal();
+    }
+}
 </script>
