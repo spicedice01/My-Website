@@ -70,7 +70,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// 6. Back to Top Button Logic (Fixed Duplicates)
+// 6. Back to Top Button Logic
 const backToTopButton = document.querySelector('#backToTop');
 
 if (backToTopButton) {
@@ -88,6 +88,9 @@ if (backToTopButton) {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 }
+
+// --- ALL ALBUM TOGGLES ---
+
 function toggleEmpowerment() {
     const gallery = document.getElementById("empowermentGallery");
     const btn = document.querySelector("#empowermentAlbum button");
@@ -112,22 +115,15 @@ function toggleGallery() {
     }
 }
 
-function toggleEmpowerment() {
-    const gallery = document.getElementById("empowermentGallery");
-    const btn = document.querySelector("#empowermentAlbum button");
-    
-    if (gallery) {
-        if (gallery.classList.contains('hidden')) {
-            gallery.classList.remove('hidden');
-            gallery.classList.add('grid');
-            btn.innerHTML = "Close Album";
-        } else {
-            gallery.classList.remove('grid');
-            gallery.classList.add('hidden');
-            btn.innerHTML = "View Album";
-        }
+function toggleCEOAlbum() {
+    const gallery = document.getElementById("ceoGallery");
+    const btn = document.querySelector("#ceoAlbum button");
+    if (gallery.classList.contains('hidden')) {
+        gallery.classList.replace('hidden', 'grid');
+        btn.innerHTML = "Close Gallery";
     } else {
-        console.log("Error: Could not find empowermentGallery ID");
+        gallery.classList.replace('grid', 'hidden');
+        btn.innerHTML = "View Full Gallery";
     }
 }
 // 7. Donation & Volunteer button interaction
