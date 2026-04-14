@@ -127,4 +127,49 @@ window.onclick = function(event) {
         closeDonateModal();
     }
 }
+    // Function to handle the counting animation
+const startCounters = () => {
+    const counters = document.querySelectorAll('.counter');
+    const speed = 200; // The higher the number, the slower the count
+
+    counters.forEach(counter => {
+        const updateCount = () => {
+            const target = +counter.getAttribute('data-target');
+            const count = +counter.innerText;
+
+            // Calculate the increment per frame
+            const inc = target / speed;
+
+            if (count < target) {
+                // Add the increment and round it
+                counter.innerText = Math.ceil(count + inc);
+                // Call function again every 1ms
+                setTimeout(updateCount, 1);
+            } else {
+                counter.innerText = target;
+            }
+        };
+        updateCount();
+    });
+};
+
+// Intersection Observer to start counting ONLY when the section is visible
+const observerOptions = {
+    threshold: 0.5 // Starts when 50% of the section is on screen
+};
+
+const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            startCounters();
+            observer.unobserve(entry.target); // Stop observing once it has run
+        }
+    });
+}, observerOptions);
+
+// Tell the observer to watch the Impact Section
+const impactSection = document.querySelector('#impact');
+if (impactSection) {
+    observer.observe(impactSection);
+}
 </script>
