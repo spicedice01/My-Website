@@ -11,6 +11,7 @@
 </head>
 <body class="font-['Inter'] antialiased bg-gray-50 text-gray-900">
 
+    <!-- Navigation -->
     <nav class="fixed w-full bg-white/95 backdrop-blur-sm shadow-sm z-50 transition-all duration-300" id="navbar">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
@@ -27,7 +28,8 @@
                     <a href="#impact" class="text-gray-600 hover:text-teal-600 font-medium transition-colors">Impact</a>
                     <a href="#team" class="text-gray-600 hover:text-teal-600 font-medium transition-colors">Team</a>
                     <a href="javascript:void(0)" onclick="openDonateModal(event)" class="bg-teal-600 text-white px-6 py-2.5 rounded-full font-medium hover:bg-teal-700 transition-all transform hover:scale-105 shadow-lg hover:shadow-xl inline-block">
-                        Donate Now
+    Donate Now
+</a>
                     </a>
                 </div>
 
@@ -37,17 +39,19 @@
             </div>
         </div>
 
+        <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
             <div class="px-4 pt-2 pb-6 space-y-2">
                 <a href="#about" class="block px-3 py-2 text-gray-600 hover:bg-teal-50 hover:text-teal-600 rounded-md">About</a>
                 <a href="#programs" class="block px-3 py-2 text-gray-600 hover:bg-teal-50 hover:text-teal-600 rounded-md">Programs</a>
                 <a href="#impact" class="block px-3 py-2 text-gray-600 hover:bg-teal-50 hover:text-teal-600 rounded-md">Impact</a>
                 <a href="#team" class="block px-3 py-2 text-gray-600 hover:bg-teal-50 hover:text-teal-600 rounded-md">Team</a>
-                <button onclick="openDonateModal(event)" class="w-full text-left px-3 py-2 text-teal-600 font-semibold">Donate Now</button>
+                <a href="#contact" class="block px-3 py-2 text-teal-600 font-semibold">Donate Now</a>
             </div>
         </div>
     </nav>
 
+    <!-- Hero Section -->
     <section class="relative pt-20 min-h-screen flex items-center overflow-hidden">
         <div class="absolute inset-0 z-0">
             <img src="hero-photo.jpeg" alt="Community" class="w-full h-full object-cover">
@@ -55,7 +59,7 @@
         </div>
 
         <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-            <div class="max-w-2xl">
+            <div class="max-w-2xl animate-fade-in-up">
                 <div class="inline-flex items-center px-4 py-2 bg-teal-500/20 border border-teal-400/30 rounded-full mb-6 backdrop-blur-sm">
                     <span class="w-2 h-2 bg-teal-400 rounded-full mr-2 animate-pulse"></span>
                     <span class="text-teal-100 text-sm font-medium">Making a difference since 2015</span>
@@ -64,216 +68,532 @@
                     Empowering Communities, <span class="text-teal-400">Changing Lives</span>
                 </h1>
                 <p class="text-xl text-gray-200 mb-8 leading-relaxed">
-                    Sammy Gitonga Foundation is dedicated to creating sustainable change through education, healthcare, and economic empowerment in underserved communities.
+                    Sammy Gitonga Foundation is dedicated to creating sustainable change through education, healthcare, and economic empowerment in underserved communities worldwide.
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4">
-                    <a href="#programs" class="inline-flex items-center justify-center px-8 py-4 bg-teal-600 text-white rounded-full font-semibold hover:bg-teal-700 transition-all transform hover:scale-105 shadow-lg">
+                    <a href="#programs" class="inline-flex items-center justify-center px-8 py-4 bg-teal-600 text-white rounded-full font-semibold hover:bg-teal-700 transition-all transform hover:scale-105 shadow-lg hover:shadow-teal-500/30">
                         Our Programs
                         <i data-lucide="arrow-right" class="ml-2 w-5 h-5"></i>
                     </a>
-                    <a href="javascript:void(0)" onclick="openDonateModal(event)" class="inline-flex items-center justify-center px-8 py-4 bg-white/10 backdrop-blur-sm border-2 border-white/30 text-white rounded-full font-semibold hover:bg-white/20 transition-all">
-                        Support Us
+                    <a href="#about" class="inline-flex items-center justify-center px-8 py-4 bg-white/10 backdrop-blur-sm border-2 border-white/30 text-white rounded-full font-semibold hover:bg-white/20 transition-all">
+                        Learn More
                     </a>
                 </div>
             </div>
         </div>
+
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <i data-lucide="chevron-down" class="w-8 h-8 text-white/70"></i>
+        </div>
     </section>
 
+    <!-- Mission Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-teal-600 font-semibold text-lg mb-2">Our Mission</h2>
+                <h3 class="text-4xl font-bold text-gray-900 mb-4">Building a Brighter Future Together</h3>
+                <p class="text-gray-600 text-lg">We believe in the power of community-driven development to create lasting, positive change for generations to come.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="group p-8 bg-gray-50 rounded-2xl hover:bg-teal-50 transition-all duration-300 hover:-translate-y-1">
+                    <div class="w-14 h-14 bg-teal-100 rounded-xl flex items-center justify-center mb-6 group-hover:bg-teal-200 transition-colors">
+                        <i data-lucide="graduation-cap" class="w-7 h-7 text-teal-700"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-gray-900 mb-3">Education First</h4>
+                    <p class="text-gray-600 leading-relaxed">Providing access to quality education and vocational training to break the cycle of poverty.</p>
+                </div>
+
+                <div class="group p-8 bg-gray-50 rounded-2xl hover:bg-teal-50 transition-all duration-300 hover:-translate-y-1">
+                    <div class="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center mb-6 group-hover:bg-blue-200 transition-colors">
+                        <i data-lucide="stethoscope" class="w-7 h-7 text-blue-700"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-gray-900 mb-3">Healthcare Access</h4>
+                    <p class="text-gray-600 leading-relaxed">Delivering essential medical services and health education to remote communities.</p>
+                </div>
+
+                <div class="group p-8 bg-gray-50 rounded-2xl hover:bg-teal-50 transition-all duration-300 hover:-translate-y-1">
+                    <div class="w-14 h-14 bg-orange-100 rounded-xl flex items-center justify-center mb-6 group-hover:bg-orange-200 transition-colors">
+                        <i data-lucide="trending-up" class="w-7 h-7 text-orange-700"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-gray-900 mb-3">Economic Growth</h4>
+                    <p class="text-gray-600 leading-relaxed">Supporting local entrepreneurs and sustainable business development.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programs Section -->
     <section id="programs" class="py-20 bg-gray-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-12">
+                <div class="max-w-2xl">
+                    <h2 class="text-teal-600 font-semibold text-lg mb-2">Our Programs</h2>
+                    <h3 class="text-4xl font-bold text-gray-900">Initiatives That Matter</h3>
+                </div>
+                <a href="#" class="hidden md:inline-flex items-center text-teal-600 font-semibold hover:text-teal-700 mt-4 md:mt-0">
+                    View All Programs <i data-lucide="arrow-right" class="ml-2 w-5 h-5"></i>
+                </a>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="group relative overflow-hidden rounded-2xl bg-white shadow-md hover:shadow-xl transition-all duration-300">
+                    <div class="h-48 overflow-hidden">
+                        <img src="http://static.photos/education/640x360/123" alt="Education" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-3">
+                            <span class="px-3 py-1 bg-teal-100 text-teal-700 text-xs font-semibold rounded-full">Active</span>
+                        </div>
+                        <h4 class="text-lg font-bold text-gray-900 mb-2">Scholarship Fund</h4>
+                        <p class="text-gray-600 text-sm mb-4">Supporting 500+ students annually with full educational scholarships.</p>
+                        <a href="#" class="inline-flex items-center text-teal-600 font-medium hover:text-teal-700 text-sm">
+                            Learn more <i data-lucide="chevron-right" class="ml-1 w-4 h-4"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="group relative overflow-hidden rounded-2xl bg-white shadow-md hover:shadow-xl transition-all duration-300">
+                    <div class="h-48 overflow-hidden">
+                        <img src="http://static.photos/medical/640x360/456" alt="Healthcare" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-3">
+                            <span class="px-3 py-1 bg-blue-100 text-blue-700 text-xs font-semibold rounded-full">Active</span>
+                        </div>
+                        <h4 class="text-lg font-bold text-gray-900 mb-2">Mobile Clinics</h4>
+                        <p class="text-gray-600 text-sm mb-4">Bringing healthcare to 50 remote villages every month.</p>
+                        <a href="#" class="inline-flex items-center text-teal-600 font-medium hover:text-teal-700 text-sm">
+                            Learn more <i data-lucide="chevron-right" class="ml-1 w-4 h-4"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="group relative overflow-hidden rounded-2xl bg-white shadow-md hover:shadow-xl transition-all duration-300">
+                    <div class="h-48 overflow-hidden">
+                        <img src="http://static.photos/people/640x360/789" alt="Women Empowerment" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-3">
+                            <span class="px-3 py-1 bg-purple-100 text-purple-700 text-xs font-semibold rounded-full">Active</span>
+                        </div>
+                        <h4 class="text-lg font-bold text-gray-900 mb-2">Women in Business</h4>
+                        <p class="text-gray-600 text-sm mb-4">Microfinance and mentorship for female entrepreneurs.</p>
+                        <a href="#" class="inline-flex items-center text-teal-600 font-medium hover:text-teal-700 text-sm">
+                            Learn more <i data-lucide="chevron-right" class="ml-1 w-4 h-4"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="group relative overflow-hidden rounded-2xl bg-white shadow-md hover:shadow-xl transition-all duration-300">
+                    <div class="h-48 overflow-hidden">
+                        <img src="http://static.photos/nature/640x360/321" alt="Environment" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-3">
+                            <span class="px-3 py-1 bg-green-100 text-green-700 text-xs font-semibold rounded-full">Active</span>
+                        </div>
+                        <h4 class="text-lg font-bold text-gray-900 mb-2">Green Communities</h4>
+                        <p class="text-gray-600 text-sm mb-4">Sustainable farming and clean water initiatives.</p>
+                        <a href="#" class="inline-flex items-center text-teal-600 font-medium hover:text-teal-700 text-sm">
+                            Learn more <i data-lucide="chevron-right" class="ml-1 w-4 h-4"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="group relative overflow-hidden rounded-2xl bg-white shadow-md hover:shadow-xl transition-all duration-300">
+                    <div class="h-48 overflow-hidden">
+                        <img src="http://static.photos/technology/640x360/777" alt="Digital Literacy" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-3">
+                            <span class="px-3 py-1 bg-indigo-100 text-indigo-700 text-xs font-semibold rounded-full">Active</span>
+                        </div>
+                        <h4 class="text-lg font-bold text-gray-900 mb-2">Digital Literacy</h4>
+                        <p class="text-gray-600 text-sm mb-4">Teaching essential computer skills and internet safety to bridge the digital divide.</p>
+                        <a href="#" class="inline-flex items-center text-teal-600 font-medium hover:text-teal-700 text-sm">
+                            Learn more <i data-lucide="chevron-right" class="ml-1 w-4 h-4"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="group relative overflow-hidden rounded-2xl bg-white shadow-md hover:shadow-xl transition-all duration-300">
+                    <div class="h-48 overflow-hidden">
+                        <img src="http://static.photos/technology/640x360/888" alt="Youth Coding" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-3">
+                            <span class="px-3 py-1 bg-pink-100 text-pink-700 text-xs font-semibold rounded-full">New</span>
+                        </div>
+                        <h4 class="text-lg font-bold text-gray-900 mb-2">Youth Coding Program</h4>
+                        <p class="text-gray-600 text-sm mb-4">Introducing programming and web development to the next generation of tech leaders.</p>
+                        <a href="#" class="inline-flex items-center text-teal-600 font-medium hover:text-teal-700 text-sm">
+                            Learn more <i data-lucide="chevron-right" class="ml-1 w-4 h-4"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact Stats -->
+    <section id="impact" class="py-20 bg-gradient-to-br from-teal-600 to-blue-700 text-white relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-0 left-0 w-72 h-72 bg-white rounded-full mix-blend-overlay filter blur-3xl transform -translate-x-1/2 -translate-y-1/2"></div>
+            <div class="absolute bottom-0 right-0 w-96 h-96 bg-white rounded-full mix-blend-overlay filter blur-3xl transform translate-x-1/2 translate-y-1/2"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="text-center mb-16">
-                <h2 class="text-teal-600 font-semibold text-lg mb-2">Our Initiatives</h2>
-                <h3 class="text-4xl font-bold text-gray-900">Programs That Matter</h3>
+                <h2 class="text-teal-200 font-semibold text-lg mb-2">Our Impact</h2>
+                <h3 class="text-4xl font-bold mb-4">Numbers That Tell a Story</h3>
+                <p class="text-teal-100 text-lg max-w-2xl mx-auto">Every number represents a life changed, a dream realized, and a community transformed.</p>
             </div>
 
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="group bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition-all">
-                    <div class="h-56 overflow-hidden">
-                        <img src="Gen/Gen1.png" alt="Scholarship" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                    </div>
-                    <div class="p-6">
-                        <h4 class="text-xl font-bold mb-2">Scholarship Fund</h4>
-                        <p class="text-gray-600 text-sm">Supporting 500+ students annually with full educational scholarships.</p>
-                    </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div class="p-6">
+                    <div class="text-5xl font-bold mb-2 counter" data-target="15000">0</div>
+                    <div class="text-teal-200 font-medium">Lives Impacted</div>
                 </div>
-
-                <div class="group bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition-all">
-                    <div class="h-56 overflow-hidden">
-                        <img src="Gen/Gen2.png" alt="Clinics" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                    </div>
-                    <div class="p-6">
-                        <h4 class="text-xl font-bold mb-2">Mobile Clinics</h4>
-                        <p class="text-gray-600 text-sm">Bringing healthcare to 50 remote villages every month.</p>
-                    </div>
+                <div class="p-6">
+                    <div class="text-5xl font-bold mb-2 counter" data-target="500">0</div>
+                    <div class="text-teal-200 font-medium">Students Educated</div>
                 </div>
-
-                <div class="group bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition-all">
-                    <div class="h-56 overflow-hidden">
-                        <img src="Gen/Gen3.png" alt="Business" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                    </div>
-                    <div class="p-6">
-                        <h4 class="text-xl font-bold mb-2">Women in Business</h4>
-                        <p class="text-gray-600 text-sm">Microfinance and mentorship for female entrepreneurs.</p>
-                    </div>
+                <div class="p-6">
+                    <div class="text-5xl font-bold mb-2 counter" data-target="120">0</div>
+                    <div class="text-teal-200 font-medium">Communities Served</div>
                 </div>
-
-                <div class="group bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition-all">
-                    <div class="h-56 overflow-hidden">
-                        <img src="Gen/Gen4.png" alt="Green" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                    </div>
-                    <div class="p-6">
-                        <h4 class="text-xl font-bold mb-2">Green Communities</h4>
-                        <p class="text-gray-600 text-sm">Sustainable farming and clean water initiatives.</p>
-                    </div>
-                </div>
-
-                <div class="group bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition-all">
-                    <div class="h-56 overflow-hidden">
-                        <img src="Gen/Gen5.png" alt="Digital" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                    </div>
-                    <div class="p-6">
-                        <h4 class="text-xl font-bold mb-2">Digital Literacy</h4>
-                        <p class="text-gray-600 text-sm">Teaching essential computer skills to bridge the digital divide.</p>
-                    </div>
-                </div>
-
-                <div class="group bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition-all">
-                    <div class="h-56 overflow-hidden">
-                        <img src="Gen/Gen6.png" alt="Coding" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                    </div>
-                    <div class="p-6">
-                        <h4 class="text-xl font-bold mb-2">Youth Coding Program</h4>
-                        <p class="text-gray-600 text-sm">Introducing programming to the next generation of tech leaders.</p>
-                    </div>
+                <div class="p-6">
+                    <div class="text-5xl font-bold mb-2 counter" data-target="98">0</div>
+                    <div class="text-teal-200 font-medium">% Donation Efficiency</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="impact" class="py-20 bg-teal-600 text-white">
-        <div class="max-w-7xl mx-auto px-4 text-center">
-            <h2 class="text-4xl font-bold mb-12">Our Impact</h2>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
-                <div><div class="text-5xl font-bold mb-2">15k+</div><p>Lives Impacted</p></div>
-                <div><div class="text-5xl font-bold mb-2">500+</div><p>Students Educated</p></div>
-                <div><div class="text-5xl font-bold mb-2">120+</div><p>Communities Served</p></div>
-                <div><div class="text-5xl font-bold mb-2">98%</div><p>Efficiency</p></div>
-            </div>
-        </div>
-    </section>
-
+    <!-- Team Section -->
     <section id="team" class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 text-center">
-            <h2 class="text-4xl font-bold mb-12">Meet Our Founder</h2>
-            <div class="w-48 h-48 rounded-full overflow-hidden mx-auto mb-6 ring-4 ring-teal-100">
-                <img src="album/sammy1.jpeg" alt="Dr. Sammy Gitonga" class="w-full h-full object-cover">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-teal-600 font-semibold text-lg mb-2">Our Team</h2>
+                <h3 class="text-4xl font-bold text-gray-900 mb-4">Meet the Changemakers</h3>
+                <p class="text-gray-600 text-lg">Dedicated professionals committed to making a difference in communities worldwide.</p>
             </div>
-            <h4 class="text-2xl font-bold">Dr. Sammy Gitonga</h4>
-            <p class="text-teal-600 font-medium mb-4">Founder & CEO</p>
-            <p class="max-w-xl mx-auto text-gray-600">Visionary leader with 20 years of experience in international development.</p>
+
+            <div class="grid md:grid-cols-1 gap-8 max-w-md mx-auto">
+                <div class="text-center group">
+                    <div class="relative mb-6 inline-block">
+                     <div class="w-48 h-48 rounded-full overflow-hidden mx-auto ring-4 ring-teal-100 group-hover:ring-teal-200 transition-all duration-300">
+    <img src="album/sammy1.jpeg" alt="Dr. Sammy Gitonga" class="w-full h-full object-cover">
+</div>
+                        <div class="absolute bottom-2 right-2 bg-teal-600 text-white p-2 rounded-full shadow-lg">
+                            <i data-lucide="linkedin" class="w-5 h-5"></i>
+                        </div>
+                    </div>
+                    <h4 class="text-xl font-bold text-gray-900">Dr. Sammy Gitonga</h4>
+                    <p class="text-teal-600 font-medium mb-2">Founder & CEO</p>
+                    <p class="text-gray-600 text-sm">Visionary leader with 20 years of experience in international development.</p>
+                </div>
+            </div>
         </div>
     </section>
 
-    <div class="bg-gray-50 py-20 space-y-12">
-        <section class="max-w-7xl mx-auto px-4">
-            <div class="bg-white rounded-2xl shadow-lg overflow-hidden cursor-pointer" onclick="toggleGallery()">
-                <div class="relative group">
-                    <img src="images/community.jpeg" class="w-full h-[400px] object-cover">
-                    <div class="absolute inset-0 bg-black/50 flex flex-col justify-center items-center text-white">
-                        <h3 class="text-3xl font-bold">Sanitary Towel Outreach</h3>
-                        <p class="mb-4">9 Photos</p>
-                        <span class="bg-teal-600 px-6 py-2 rounded-full">View Album</span>
+    <!-- Testimonials -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-teal-600 font-semibold text-lg mb-2">Testimonials</h2>
+                <h3 class="text-4xl font-bold text-gray-900">Stories of Hope</h3>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white p-8 rounded-2xl shadow-md relative">
+                    <i data-lucide="quote" class="w-10 h-10 text-teal-200 absolute top-6 left-6"></i>
+                    <p class="text-gray-700 text-lg italic mb-6 relative z-10 pt-8">"The scholarship from Gitonga Foundation changed my life. I'm now on a mission to impact other lives."</p>
+                    <div class="flex items-center">
+                        <img src="http://static.photos/people/200x200/444" alt="Beneficiary" class="w-12 h-12 rounded-full object-cover mr-4">
+                        <div>
+                            <h5 class="font-bold text-gray-900">Sabrina Njeri</h5>
+                            <p class="text-gray-600 text-sm">Philanthropist</p>
+                        </div>
                     </div>
                 </div>
-                <div id="fullGallery" class="hidden grid grid-cols-2 md:grid-cols-3 gap-4 p-6">
-                    <img src="images/community.jpeg" class="rounded-lg"><img src="images/community2.jpeg" class="rounded-lg">
-                    <img src="images/community3.jpeg" class="rounded-lg"><img src="images/community4.jpeg" class="rounded-lg">
-                    <img src="images/community5.jpeg" class="rounded-lg"><img src="images/community6.jpeg" class="rounded-lg">
-                    <img src="images/community7.jpeg" class="rounded-lg"><img src="images/community8.jpeg" class="rounded-lg">
-                    <img src="images/community9.jpeg" class="rounded-lg">
+
+                <div class="bg-white p-8 rounded-2xl shadow-md relative">
+                    <i data-lucide="quote" class="w-10 h-10 text-teal-200 absolute top-6 left-6"></i>
+                    <p class="text-gray-700 text-lg italic mb-6 relative z-10 pt-8">"Thanks to the microfinance program, I was able to start my own business and i have employed five other women."</p>
+                    <div class="flex items-center">
+                        <img src="http://static.photos/people/200x200/555" alt="Beneficiary" class="w-12 h-12 rounded-full object-cover mr-4">
+                        <div>
+                           <h5 class="font-bold text-gray-900">Purity Mwaura</h5>
+                            <p class="text-gray-600 text-sm">Entrepreneur</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="bg-gray-50 pb-20">
+        <section class="max-w-7xl mx-auto px-4 mb-12" id="outreachAlbum">
+            <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
+                <div class="relative group cursor-pointer" onclick="toggleGallery()">
+                    <img src="images/community.jpeg" alt="Outreach Cover" class="w-full h-[400px] object-cover transition-transform group-hover:scale-105">
+                    <div class="absolute inset-0 bg-black/60 flex flex-col justify-center items-center text-center p-6">
+                        <h3 class="text-3xl font-bold text-white mb-2">Sanitary Towel Outreach</h3>
+                        <p class="text-teal-200 mb-4">9 Photos from the Community Event</p>
+                        <button class="bg-teal-600 text-white px-8 py-3 rounded-full font-bold hover:bg-teal-700 transition-all">View Album</button>
+                    </div>
+                </div>
+                <div id="fullGallery" class="hidden grid-cols-2 md:grid-cols-3 gap-4 p-6">
+                    <img src="images/community.jpeg" class="rounded-lg shadow-sm">
+                    <img src="images/community2.jpeg" class="rounded-lg shadow-sm">
+                    <img src="images/community3.jpeg" class="rounded-lg shadow-sm">
+                    <img src="images/community4.jpeg" class="rounded-lg shadow-sm">
+                    <img src="images/community5.jpeg" class="rounded-lg shadow-sm">
+                    <img src="images/community6.jpeg" class="rounded-lg shadow-sm">
+                    <img src="images/community7.jpeg" class="rounded-lg shadow-sm">
+                    <img src="images/community8.jpeg" class="rounded-lg shadow-sm">
+                    <img src="images/community9.jpeg" class="rounded-lg shadow-sm">
                 </div>
             </div>
         </section>
-
-        <section class="max-w-7xl mx-auto px-4">
-            <div class="bg-white rounded-2xl shadow-lg overflow-hidden cursor-pointer" onclick="toggleEmpowerment()">
-                <div class="relative group">
-                    <img src="Pics/Pic1.jpeg" class="w-full h-[400px] object-cover">
-                    <div class="absolute inset-0 bg-black/50 flex flex-col justify-center items-center text-white">
-                        <h3 class="text-3xl font-bold">Community Empowerment</h3>
-                        <p class="mb-4">3 Photos</p>
-                        <span class="bg-teal-600 px-6 py-2 rounded-full">View Album</span>
+   <section class="max-w-7xl mx-auto px-4 mb-12" id="empowermentAlbum">
+    <div class="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100">
+        <div class="relative group cursor-pointer" onclick="toggleEmpowerment()">
+            <img src="Pics/Pic1.jpeg" alt="Community Empowerment Cover" class="w-full h-[400px] object-cover transition-transform group-hover:scale-105">
+            <div class="absolute inset-0 bg-black/60 flex flex-col justify-center items-center text-center p-6">
+                <h3 class="text-3xl font-bold text-white mb-2">Community Empowerment</h3>
+                <p class="text-teal-200 mb-4">3 Photos from the Field</p>
+               <button class="bg-teal-600 text-white px-8 py-3 rounded-full font-bold hover:bg-teal-700 transition-all">View Album</button>
+            </div>
+        </div>
+        
+        <div id="empowermentGallery" class="hidden grid-cols-1 md:grid-cols-3 gap-4 p-6 bg-gray-50">
+            <img src="Pics/Pic1.jpeg" class="rounded-lg shadow-sm border w-full h-64 object-cover">
+            <img src="Pics/Pic2.jpeg" class="rounded-lg shadow-sm border w-full h-64 object-cover">
+            <img src="Pics/Pic3.jpeg" class="rounded-lg shadow-sm border w-full h-64 object-cover">
+        </div>
+    </div>
+</section>
+        <section class="max-w-7xl mx-auto px-4" id="ceoAlbum">
+            <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
+                <div class="relative group cursor-pointer" onclick="toggleCEOAlbum()">
+                    <img src="album/sammy1.jpeg" alt="Dr. Sammy Gitonga" class="w-full h-[400px] object-cover transition-transform group-hover:scale-105">
+                    <div class="absolute inset-0 bg-black/60 flex flex-col justify-center items-center text-center p-6">
+                        <h3 class="text-3xl font-bold text-white mb-2">Dr. Sammy Gitonga</h3>
+                        <p class="text-teal-200 mb-4">Founder & CEO Gallery</p>
+                        <button class="bg-teal-600 text-white px-8 py-3 rounded-full font-bold hover:bg-teal-700 transition-all">View Full Gallery</button>
                     </div>
                 </div>
-                <div id="empowermentGallery" class="hidden grid grid-cols-1 md:grid-cols-3 gap-4 p-6">
-                    <img src="Pics/Pic1.jpeg" class="rounded-lg h-64 w-full object-cover">
-                    <img src="Pics/Pic2.jpeg" class="rounded-lg h-64 w-full object-cover">
-                    <img src="Pics/Pic3.jpeg" class="rounded-lg h-64 w-full object-cover">
+                <div id="ceoGallery" class="hidden grid-cols-2 md:grid-cols-4 gap-4 p-6">
+                    <img src="album/sammy1.jpeg" class="rounded-lg shadow-sm">
+                    <img src="album/sammy2.jpeg" class="rounded-lg shadow-sm">
+                    <img src="album/sammy3.jpeg" class="rounded-lg shadow-sm">
+                    <img src="album/sammy4.jpeg" class="rounded-lg shadow-sm">
+                    <img src="album/sammy5.jpeg" class="rounded-lg shadow-sm">
+                    <img src="album/sammy6.jpeg" class="rounded-lg shadow-sm">
+                    <img src="album/sammy7.jpeg" class="rounded-lg shadow-sm">
+                    <img src="album/sammy8.jpeg" class="rounded-lg shadow-sm">
+                    <img src="album/sammy9.jpeg" class="rounded-lg shadow-sm">
+                    <img src="album/sammy10.jpeg" class="rounded-lg shadow-sm">
+                    <img src="album/sammy11.jpeg" class="rounded-lg shadow-sm">
+                    <img src="album/sammy12.jpeg" class="rounded-lg shadow-sm">
+                    <img src="album/sammy13.jpeg" class="rounded-lg shadow-sm">
+                    <img src="album/sammy14.jpeg" class="rounded-lg shadow-sm">
+                    <img src="album/sammy15.jpeg" class="rounded-lg shadow-sm">
+                    <img src="album/sammy16.jpeg" class="rounded-lg shadow-sm">
                 </div>
             </div>
         </section>
     </div>
 
-    <section class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 text-center">
-            <h2 class="text-3xl font-bold mb-12">Featured Media</h2>
-            <div class="grid md:grid-cols-2 gap-8">
-                <div class="aspect-video rounded-2xl overflow-hidden shadow-lg">
-                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/VUPEe1chPhc" frameborder="0" allowfullscreen></iframe>
+    <section id="featured-media" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-2">Featured Videos</h2>
+                <div class="w-20 h-1 bg-teal-500 mx-auto"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="group bg-gray-50 rounded-2xl overflow-hidden shadow-md">
+                    <div class="aspect-video">
+                        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/VUPEe1chPhc" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-gray-800 text-lg">Foundation Highlights</h3>
+                    </div>
                 </div>
-                <div class="aspect-video rounded-2xl overflow-hidden shadow-lg">
-                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/w1b6sfFyiz4" frameborder="0" allowfullscreen></iframe>
+
+                <div class="group bg-gray-50 rounded-2xl overflow-hidden shadow-md">
+                    <div class="aspect-video">
+                        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/w1b6sfFyiz4" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                    <div class="p-4">
+                     
+                    </div>
+                </div>
+
+                <div class="group bg-gray-50 rounded-2xl overflow-hidden shadow-md">
+                    <div class="aspect-video">
+                        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/5hpOLkM1PUg" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                    <div class="p-4">
+        
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer class="bg-gray-900 text-gray-300 pt-16 pb-8">
-        <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
-            <div>
-                <h4 class="text-white font-bold mb-4">Sammy Gitonga Foundation</h4>
-                <p class="text-sm">Creating sustainable change through community-led initiatives in Nakuru and beyond.</p>
+    <script>
+    // 1. Initialize the icons (like the heart and menu)
+    lucide.createIcons();
+
+    // 2. Open/Close the Mobile Menu
+    function toggleMobileMenu() {
+        const menu = document.getElementById('mobile-menu');
+        menu.classList.toggle('hidden');
+    }
+
+    // 3. Open/Close the Outreach Album
+    function toggleGallery() {
+        const gallery = document.getElementById("fullGallery");
+        const btn = document.querySelector("#outreachAlbum button");
+        if (gallery.classList.contains('hidden')) {
+            gallery.classList.replace('hidden', 'grid');
+            btn.innerHTML = "Close Album";
+        } else {
+            gallery.classList.replace('grid', 'hidden');
+            btn.innerHTML = "View Album";
+        }
+    }
+
+    // 4. Open/Close the CEO Album
+    function toggleCEOAlbum() {
+        const gallery = document.getElementById("ceoGallery");
+        const btn = document.querySelector("#ceoAlbum button");
+        if (gallery.classList.contains('hidden')) {
+            gallery.classList.replace('hidden', 'grid');
+            btn.innerHTML = "Close Gallery";
+        } else {
+            gallery.classList.replace('grid', 'hidden');
+            btn.innerHTML = "View Full Gallery";
+        }
+    }
+
+    // 5. Open/Close the Community Empowerment Album (THIS WAS MISSING)
+    function toggleEmpowerment() {
+        const gallery = document.getElementById("empowermentGallery");
+        const btn = document.querySelector("#empowermentAlbum button");
+        if (gallery.classList.contains('hidden')) {
+            gallery.classList.replace('hidden', 'grid');
+            btn.innerHTML = "Close Album";
+        } else {
+            gallery.classList.replace('grid', 'hidden');
+            btn.innerHTML = "View Album";
+        }
+    }
+</script>
+   <footer class="bg-gray-900 text-gray-300 pt-16 pb-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+            
+            <div class="space-y-4">
+                <div class="flex items-center space-x-2">
+                    <div class="w-8 h-8 bg-teal-500 rounded flex items-center justify-center">
+                        <i data-lucide="heart-handshake" class="w-5 h-5 text-white"></i>
+                    </div>
+                    <span class="text-xl font-bold text-white">Sammy Gitonga <span class="text-teal-500">Foundation</span></span>
+                </div>
+                <p class="text-sm leading-relaxed">
+                    Dedicated to creating sustainable change through education, healthcare, and economic empowerment in Nakuru and beyond.
+                </p>
+                <div class="flex space-x-4">
+                    <a href="#" class="hover:text-teal-500 transition-colors"><i data-lucide="facebook" class="w-5 h-5"></i></a>
+                    <a href="#" class="hover:text-teal-500 transition-colors"><i data-lucide="twitter" class="w-5 h-5"></i></a>
+                    <a href="#" class="hover:text-teal-500 transition-colors"><i data-lucide="instagram" class="w-5 h-5"></i></a>
+                </div>
             </div>
+
             <div>
-                <h4 class="text-white font-bold mb-4">Quick Links</h4>
-                <ul class="space-y-2 text-sm">
-                    <li><a href="#about" class="hover:text-teal-500">About Us</a></li>
-                    <li><a href="#programs" class="hover:text-teal-500">Programs</a></li>
-                    <li><button onclick="openDonateModal(event)" class="hover:text-teal-500 text-left">Donate Now</button></li>
+                <h4 class="text-white font-bold mb-6">Quick Links</h4>
+                <ul class="space-y-4 text-sm">
+                    <li><a href="#about" class="hover:text-teal-500 transition-colors">About Our Mission</a></li>
+                    <li><a href="#programs" class="hover:text-teal-500 transition-colors">Current Programs</a></li>
+                    <li><a href="#impact" class="hover:text-teal-500 transition-colors">Impact Reports</a></li>
+                    <li><a href="#team" class="hover:text-teal-500 transition-colors">The Team</a></li>
                 </ul>
             </div>
+
             <div>
-                <h4 class="text-white font-bold mb-4">Contact</h4>
-                <p class="text-sm">Email: gitongasammy06@gmail.com</p>
-                <p class="text-sm">Phone: +1 (225) 963-8271</p>
+                <h4 class="text-white font-bold mb-6">Get In Touch</h4>
+                <ul class="space-y-4 text-sm">
+                    <li class="flex items-start space-x-3">
+                        <i data-lucide="map-pin" class="w-5 h-5 text-teal-500"></i>
+                        <span>Nakuru, Kenya</span>
+                    </li>
+                    <li class="flex items-center space-x-3">
+                        <i data-lucide="phone" class="w-5 h-5 text-teal-500"></i>
+                        <span>+12259638271</span>
+                    </li>
+                    <li class="flex items-center space-x-3">
+                        <i data-lucide="mail" class="w-5 h-5 text-teal-500"></i>
+                        <span>gitongasammy06@gmail.com</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="text-white font-bold mb-6">Newsletter</h4>
+                <p class="text-sm mb-4">Stay updated with our latest field reports.</p>
+                <form class="flex flex-col space-y-2">
+                    <input type="email" placeholder="Your email address" class="bg-gray-800 border-gray-700 text-white px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500">
+                    <button type="submit" class="bg-teal-600 hover:bg-teal-700 text-white px-4 py-2 rounded-lg font-bold transition-all">Subscribe</button>
+                </form>
             </div>
         </div>
-        <div class="border-t border-gray-800 pt-8 text-center text-xs">
-            <p>&copy; 2026 Sammy Gitonga Foundation. All rights reserved.</p>
-        </div>
-    </footer>
 
-    <div id="donateModal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4 bg-gray-900/60 backdrop-blur-sm">
-        <div class="bg-white rounded-2xl shadow-2xl max-w-md w-full p-8 text-center" id="modalContent">
+        <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-xs">
+            <p>&copy; 2026 Sammy Gitonga Foundation. All rights reserved.</p>
+            <div class="flex space-x-6 mt-4 md:mt-0">
+                <a href="#" class="hover:text-white">Privacy Policy</a>
+                <a href="#" class="hover:text-white">Terms of Service</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<button id="backToTop" class="fixed bottom-8 right-8 bg-teal-600 text-white p-3 rounded-full shadow-2xl opacity-0 transition-opacity duration-300 pointer-events-none z-50">
+    <i data-lucide="arrow-up" class="w-6 h-6"></i>
+</button>
+  <div id="donateModal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4 bg-gray-900/60 backdrop-blur-sm transition-all">
+    <div class="bg-white rounded-2xl shadow-2xl max-w-md w-full overflow-hidden transform transition-all scale-95 opacity-0" id="modalContent">
+        <div class="p-8 text-center">
             <div class="w-16 h-16 bg-teal-100 rounded-full flex items-center justify-center mx-auto mb-6">
                 <i data-lucide="heart" class="w-8 h-8 text-teal-600"></i>
             </div>
             <h3 class="text-2xl font-bold text-gray-900 mb-2">Support Our Mission</h3>
-            <p class="text-gray-600 mb-8 text-sm">To ensure your contribution is handled securely, please reach out to us directly:</p>
+            <p class="text-gray-600 mb-8">Thank you for your willingness to give. To ensure your contribution is handled securely and directed to the right program, please reach out to us directly.</p>
+            
             <div class="space-y-4 mb-8">
-                <a href="tel:+12259638271" class="flex items-center justify-center space-x-3 p-4 bg-gray-50 rounded-xl hover:bg-teal-50 transition-colors">
+                <a href="tel:+12259638271" class="flex items-center justify-center space-x-3 p-4 bg-gray-50 rounded-xl hover:bg-teal-50 transition-colors group">
                     <i data-lucide="phone" class="w-5 h-5 text-teal-600"></i>
-                    <span class="font-semibold text-gray-800">+1 (225) 963-8271</span>
+                    <span class="font-semibold text-gray-800 group-hover:text-teal-700">+1 (225) 963-8271</span>
                 </a>
-                <a href="mailto:gitongasammy06@gmail.com" class="flex items-center justify-center space-x-3 p-4 bg-gray-50 rounded-xl hover:bg-teal-50 transition-colors">
+                <a href="mailto:gitongasammy06@gmail.com" class="flex items-center justify-center space-x-3 p-4 bg-gray-50 rounded-xl hover:bg-teal-50 transition-colors group">
                     <i data-lucide="mail" class="w-5 h-5 text-teal-600"></i>
-                    <span class="font-semibold text-gray-800">gitongasammy06@gmail.com</span>
+                    <span class="font-semibold text-gray-800 group-hover:text-teal-700">gitongasammy06@gmail.com</span>
                 </a>
             </div>
-            <button onclick="closeDonateModal()" class="text-gray-500 font-medium hover:text-gray-700">Close</button>
+
+            <button onclick="closeDonateModal()" class="w-full py-3 text-gray-500 font-medium hover:text-gray-700 transition-colors">
+                Close
+            </button>
         </div>
     </div>
-
+</div>
     <script src="script.js"></script>
 </body>
 </html>
