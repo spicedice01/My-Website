@@ -235,6 +235,23 @@
             .hero-image-caption { left: 1.5rem; right: 1.5rem; bottom: 1.5rem; }
         }
 
+        /* ── INVOLVEMENT & CONTACT ── */
+        .involvement-card {
+            padding: 1.75rem;
+            border: 1px solid #e2e8f0;
+            border-radius: 1.25rem;
+            background: #fff;
+            transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease;
+        }
+        .involvement-card:hover { transform: translateY(-5px); border-color: var(--teal); box-shadow: 0 18px 40px rgba(15,23,42,.08); }
+        .involvement-icon { width: 48px; height: 48px; display:flex; align-items:center; justify-content:center; border-radius: .9rem; background: var(--teal-light); color: var(--teal-dark); margin-bottom: 1.25rem; }
+        .inquiry-input { width:100%; border:1px solid #cbd5e1; border-radius:.7rem; padding:.8rem 1rem; background:#fff; color:var(--ink); outline:none; transition:border-color .2s, box-shadow .2s; }
+        .inquiry-input:focus { border-color:var(--teal); box-shadow:0 0 0 3px rgba(13,148,136,.12); }
+        .contact-panel { background:linear-gradient(135deg,#0b1220 0%,#172235 100%); border-radius:1.5rem; color:#fff; overflow:hidden; position:relative; }
+        .contact-panel::after { content:''; position:absolute; width:280px; height:280px; border:1px solid rgba(231,182,90,.22); border-radius:50%; right:-100px; top:-120px; }
+        .whatsapp-button { display:inline-flex; align-items:center; justify-content:center; gap:.55rem; background:#25D366; color:#073b20; padding:.85rem 1.3rem; border-radius:999px; font-weight:700; text-decoration:none; transition:transform .2s, box-shadow .2s; }
+        .whatsapp-button:hover { transform:translateY(-2px); box-shadow:0 12px 26px rgba(37,211,102,.25); }
+
         /* ── STAT CARD ── */
         .stat-card {
             position: relative;
@@ -508,11 +525,13 @@
         <!-- Desktop Links -->
         <div class="hidden md:flex items-center gap-8">
             <a href="#about" class="nav-link">About</a>
+            <a href="#foundation" class="nav-link">Foundation</a>
             <a href="#programs" class="nav-link">Programs</a>
             <a href="#impact" class="nav-link">Impact</a>
             <a href="#team" class="nav-link">Team</a>
             <a href="#media" class="nav-link">Media</a>
-            <button onclick="openDonate()" style="background:var(--teal);color:#fff;font-size:.85rem;font-weight:600;padding:.6rem 1.5rem;border-radius:999px;border:none;cursor:pointer;transition:all .2s;letter-spacing:.02em;" onmouseover="this.style.background='#0f766e'" onmouseout="this.style.background='#0d9488'">
+            <a href="#contact" class="nav-link">Contact</a>
+            <button onclick="openWhatsAppDonation()" style="background:var(--teal);color:#fff;font-size:.85rem;font-weight:600;padding:.6rem 1.5rem;border-radius:999px;border:none;cursor:pointer;transition:all .2s;letter-spacing:.02em;" onmouseover="this.style.background='#0f766e'" onmouseout="this.style.background='#0d9488'">
                 Donate Now
             </button>
         </div>
@@ -529,11 +548,14 @@
     <div id="mobileMenu" style="display:none;background:#fff;border-top:1px solid #e2e8f0;">
         <div class="px-6 py-4 flex flex-col gap-1">
             <a href="#about" onclick="toggleMobile()" class="py-2.5 text-slate-700 font-medium text-sm border-b border-slate-100">About</a>
+            <a href="#foundation" onclick="toggleMobile()" class="py-2.5 text-slate-700 font-medium text-sm border-b border-slate-100">Foundation</a>
             <a href="#programs" onclick="toggleMobile()" class="py-2.5 text-slate-700 font-medium text-sm border-b border-slate-100">Programs</a>
             <a href="#impact" onclick="toggleMobile()" class="py-2.5 text-slate-700 font-medium text-sm border-b border-slate-100">Impact</a>
             <a href="#team" onclick="toggleMobile()" class="py-2.5 text-slate-700 font-medium text-sm border-b border-slate-100">Team</a>
             <a href="#media" onclick="toggleMobile()" class="py-2.5 text-slate-700 font-medium text-sm border-b border-slate-100">Media</a>
-            <button onclick="openDonate();toggleMobile();" style="margin-top:.75rem;background:var(--teal);color:#fff;padding:.75rem;border-radius:.5rem;font-weight:600;font-size:.875rem;border:none;cursor:pointer;width:100%;">Donate Now</button>
+            <a href="#get-involved" onclick="toggleMobile()" class="py-2.5 text-slate-700 font-medium text-sm border-b border-slate-100">Get Involved</a>
+            <a href="#contact" onclick="toggleMobile()" class="py-2.5 text-slate-700 font-medium text-sm border-b border-slate-100">Contact</a>
+            <button onclick="openWhatsAppDonation();toggleMobile();" style="margin-top:.75rem;background:var(--teal);color:#fff;padding:.75rem;border-radius:.5rem;font-weight:600;font-size:.875rem;border:none;cursor:pointer;width:100%;">Donate Now</button>
         </div>
     </div>
 </nav>
@@ -654,6 +676,48 @@
 <!-- ═══════════════════════════════════════════
      PROGRAMS
 ═══════════════════════════════════════════ -->
+<section id="foundation" class="py-24" style="background:#f8fafc;">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="grid lg:grid-cols-[.85fr_1.15fr] gap-12 items-start">
+            <div class="reveal">
+                <p class="section-label mb-4">The Foundation</p>
+                <h2 class="display text-4xl md:text-5xl font-bold leading-tight mb-6" style="color:var(--ink);">Rooted in community.<br><em style="color:var(--teal);">Built for lasting change.</em></h2>
+                <p class="text-slate-500 text-lg leading-relaxed">The Sammy Gitonga Foundation brings people, practical action, and shared purpose together to help communities shape a more hopeful future.</p>
+                <div class="divider"></div>
+                <p class="text-slate-500 leading-relaxed">Founded by Dr. Sammy Gitonga, our work begins with listening. We partner with communities across Nakuru County and beyond to turn local insight into opportunity, dignity, and measurable progress.</p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-4 reveal">
+                <div class="stat-card">
+                    <p class="section-label mb-3">Our Mission</p>
+                    <h3 class="display text-2xl font-bold mb-3" style="color:var(--ink);">Create opportunity where it matters most.</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed">To create sustainable change through education, healthcare, economic empowerment, and community-led action.</p>
+                </div>
+                <div class="stat-card">
+                    <p class="section-label mb-3">Our Vision</p>
+                    <h3 class="display text-2xl font-bold mb-3" style="color:var(--ink);">Communities leading their own future.</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed">A Kenya where every person can learn, thrive, participate, and build a dignified life.</p>
+                </div>
+                <div class="stat-card">
+                    <p class="section-label mb-3">Where We Work</p>
+                    <h3 class="display text-2xl font-bold mb-3" style="color:var(--ink);">Nakuru and beyond.</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed">Our roots are in Nakuru County, with partnerships and outreach shaped by the needs of the communities we serve.</p>
+                </div>
+                <div class="stat-card">
+                    <p class="section-label mb-3">How We’re Led</p>
+                    <h3 class="display text-2xl font-bold mb-3" style="color:var(--ink);">People, accountability, purpose.</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed">Founder-led with community voices at the center, our governance approach is grounded in stewardship, transparency, and responsible partnerships.</p>
+                </div>
+            </div>
+        </div>
+        <div class="reveal mt-8 p-5 rounded-2xl" style="background:#fffbeb;border:1px solid #fde68a;">
+            <p class="text-sm text-slate-600 leading-relaxed"><strong style="color:#92400e;">Registration and compliance:</strong> Official registration details are being prepared for publication. We will add the verified registration number and documentation here rather than publish unconfirmed information.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     PROGRAMS
+═══════════════════════════════════════════ -->
 <section id="programs" class="py-28" style="background:var(--surface);">
     <div class="max-w-7xl mx-auto px-6">
         <div class="reveal text-center mb-16">
@@ -728,6 +792,63 @@
                     <h4 class="font-bold text-lg mt-3 mb-2" style="color:var(--ink);">Youth Coding Program</h4>
                     <p class="text-slate-500 text-sm leading-relaxed">Introducing programming to the next generation of African tech leaders.</p>
                 </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     IMPACT STATS
+═══════════════════════════════════════════ -->
+<section id="get-involved" class="py-28 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="reveal text-center mb-14">
+            <p class="section-label mb-4 justify-center">Make Your Mark</p>
+            <h2 class="display text-4xl md:text-5xl font-bold mb-4" style="color:var(--ink);">There is a place for you here.</h2>
+            <p class="text-slate-500 max-w-2xl mx-auto text-lg leading-relaxed">Whether you give, serve, connect, or champion a cause, your involvement helps turn shared hope into practical change.</p>
+        </div>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-12">
+            <a href="#inquiry" class="involvement-card reveal" style="text-decoration:none;color:inherit;">
+                <div class="involvement-icon"><svg width="22" height="22" fill="none" viewBox="0 0 24 24"><path d="M12 21C12 21 4 13.5 4 8.5A5 5 0 0 1 12 5.07A5 5 0 0 1 20 8.5C20 13.5 12 21 12 21Z" stroke="currentColor" stroke-width="1.8"/></svg></div>
+                <h3 class="font-bold text-xl mb-2" style="color:var(--ink);">Donate</h3>
+                <p class="text-slate-500 text-sm leading-relaxed">Help fund education, healthcare, and community-led solutions.</p>
+            </a>
+            <a href="#inquiry" class="involvement-card reveal delay-1" style="text-decoration:none;color:inherit;">
+                <div class="involvement-icon"><svg width="22" height="22" fill="none" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8ZM22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></div>
+                <h3 class="font-bold text-xl mb-2" style="color:var(--ink);">Volunteer</h3>
+                <p class="text-slate-500 text-sm leading-relaxed">Bring your time, skills, and energy to work that matters.</p>
+            </a>
+            <a href="#inquiry" class="involvement-card reveal delay-2" style="text-decoration:none;color:inherit;">
+                <div class="involvement-icon"><svg width="22" height="22" fill="none" viewBox="0 0 24 24"><path d="M3 7h18M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2ZM8 11h8M8 15h5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></div>
+                <h3 class="font-bold text-xl mb-2" style="color:var(--ink);">Partner</h3>
+                <p class="text-slate-500 text-sm leading-relaxed">Build a purposeful partnership with the communities we serve.</p>
+            </a>
+            <a href="#inquiry" class="involvement-card reveal delay-3" style="text-decoration:none;color:inherit;">
+                <div class="involvement-icon"><svg width="22" height="22" fill="none" viewBox="0 0 24 24"><path d="m12 3 2.78 5.63L21 9.54l-4.5 4.38 1.06 6.19L12 17.18l-5.56 2.93 1.06-6.19L3 9.54l6.22-.91L12 3Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></div>
+                <h3 class="font-bold text-xl mb-2" style="color:var(--ink);">Sponsor</h3>
+                <p class="text-slate-500 text-sm leading-relaxed">Champion a student, program, or community initiative over time.</p>
+            </a>
+        </div>
+        <div id="inquiry" class="reveal max-w-4xl mx-auto rounded-3xl p-6 md:p-10" style="background:var(--surface);border:1px solid #e2e8f0;">
+            <div class="grid md:grid-cols-[.8fr_1.2fr] gap-8 items-start">
+                <div>
+                    <p class="section-label mb-4">Start a conversation</p>
+                    <h3 class="display text-3xl font-bold mb-3" style="color:var(--ink);">Tell us how you’d like to help.</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed">Complete the short form and we’ll open WhatsApp with your message ready to send to the foundation team.</p>
+                </div>
+                <form onsubmit="sendInquiryToWhatsApp(event)" class="grid gap-3">
+                    <input class="inquiry-input" name="name" type="text" placeholder="Your name" required>
+                    <input class="inquiry-input" name="contact" type="text" placeholder="Phone or email" required>
+                    <select class="inquiry-input" name="interest" required>
+                        <option value="">I want to…</option>
+                        <option>Donate</option>
+                        <option>Volunteer</option>
+                        <option>Partner</option>
+                        <option>Sponsor</option>
+                    </select>
+                    <textarea class="inquiry-input" name="message" rows="3" placeholder="Tell us a little more (optional)"></textarea>
+                    <button type="submit" class="whatsapp-button" style="border:none;cursor:pointer;">Continue on WhatsApp →</button>
+                </form>
             </div>
         </div>
     </div>
@@ -1027,9 +1148,39 @@
     <div class="max-w-3xl mx-auto text-center reveal">
         <h2 class="display text-4xl md:text-5xl font-bold text-white mb-4">Ready to Make a Difference?</h2>
         <p style="color:rgba(255,255,255,.8);margin-bottom:2rem;font-size:1.1rem;">Your contribution — big or small — changes lives. Join us in building a better Kenya.</p>
-        <button onclick="openDonate()" style="background:#fff;color:var(--teal-dark);padding:.9rem 2.5rem;border-radius:999px;font-weight:700;font-size:1rem;border:none;cursor:pointer;transition:all .25s;" onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='0 12px 32px rgba(0,0,0,.15)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='none'">
+        <button onclick="openWhatsAppDonation()" style="background:#fff;color:var(--teal-dark);padding:.9rem 2.5rem;border-radius:999px;font-weight:700;font-size:1rem;border:none;cursor:pointer;transition:all .25s;" onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='0 12px 32px rgba(0,0,0,.15)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='none'">
             Donate Now →
         </button>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     FOOTER
+═══════════════════════════════════════════ -->
+<section id="contact" class="py-24" style="background:#f8fafc;">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="contact-panel p-8 md:p-12">
+            <div class="relative z-10 grid lg:grid-cols-[1.1fr_.9fr] gap-10 items-center">
+                <div class="reveal">
+                    <p class="mono text-xs tracking-widest text-teal-300 uppercase mb-4">Connect with us</p>
+                    <h2 class="display text-4xl md:text-5xl font-bold text-white mb-5">Give with purpose.<br><em style="color:#e7b65a;">Start a conversation.</em></h2>
+                    <p class="text-slate-300 leading-relaxed max-w-xl mb-7">For donations, partnerships, sponsorships, and volunteer opportunities, reach the foundation team directly on WhatsApp. We’ll help you find the most meaningful way to take part.</p>
+                    <a class="whatsapp-button" href="https://wa.me/12259638271?text=Hello%20Sammy%20Gitonga%20Foundation%2C%20I%20would%20like%20to%20learn%20more%20about%20supporting%20your%20work." target="_blank" rel="noopener">Message us on WhatsApp →</a>
+                </div>
+                <div class="reveal grid gap-3">
+                    <a href="https://wa.me/12259638271?text=Hello%20Sammy%20Gitonga%20Foundation%2C%20I%20would%20like%20to%20make%20a%20donation." target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1.1rem 1.25rem;border:1px solid rgba(255,255,255,.15);border-radius:1rem;background:rgba(255,255,255,.07);color:#fff;text-decoration:none;">
+                        <span><small style="display:block;color:#f5d58a;text-transform:uppercase;letter-spacing:.1em;font-size:.65rem;">Donate</small><strong>Support a programme</strong></span><span style="color:#5eead4;">→</span>
+                    </a>
+                    <a href="https://wa.me/12259638271?text=Hello%20Sammy%20Gitonga%20Foundation%2C%20I%20would%20like%20to%20volunteer." target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1.1rem 1.25rem;border:1px solid rgba(255,255,255,.15);border-radius:1rem;background:rgba(255,255,255,.07);color:#fff;text-decoration:none;">
+                        <span><small style="display:block;color:#f5d58a;text-transform:uppercase;letter-spacing:.1em;font-size:.65rem;">Volunteer</small><strong>Share your skills</strong></span><span style="color:#5eead4;">→</span>
+                    </a>
+                    <div style="display:grid;grid-template-columns:1fr 1fr;gap:.75rem;">
+                        <a href="mailto:gitongasammy06@gmail.com" style="display:block;padding:1rem;border-radius:1rem;background:#fff;color:#0f172a;text-decoration:none;"><small style="display:block;color:#0d9488;text-transform:uppercase;letter-spacing:.1em;font-size:.62rem;">Email</small><strong style="font-size:.85rem;word-break:break-word;">Gitongasammy06@gmail.com</strong></a>
+                        <a href="tel:+12259638271" style="display:block;padding:1rem;border-radius:1rem;background:#fff;color:#0f172a;text-decoration:none;"><small style="display:block;color:#0d9488;text-transform:uppercase;letter-spacing:.1em;font-size:.62rem;">Call</small><strong style="font-size:.85rem;">+1 (225) 963-8271</strong></a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </section>
 
@@ -1202,6 +1353,23 @@ function toggleMobile() {
 }
 
 // ── DONATE MODAL ──
+function openWhatsAppDonation() {
+    const message = 'Hello Sammy Gitonga Foundation, I would like to make a donation and learn how to support your programmes.';
+    window.open('https://wa.me/12259638271?text=' + encodeURIComponent(message), '_blank', 'noopener');
+}
+
+function sendInquiryToWhatsApp(event) {
+    event.preventDefault();
+    const form = event.target;
+    const name = form.elements.name.value.trim();
+    const contact = form.elements.contact.value.trim();
+    const interest = form.elements.interest.value;
+    const message = form.elements.message.value.trim() || 'I would like to learn more.';
+    const whatsappMessage = 'Hello Sammy Gitonga Foundation. My name is ' + name + '.\\n\\nI would like to ' + interest.toLowerCase() + '.\\n\\n' + message + '\\n\\nMy contact is: ' + contact;
+    window.open('https://wa.me/12259638271?text=' + encodeURIComponent(whatsappMessage), '_blank', 'noopener');
+    form.reset();
+}
+
 function openDonate() {
     const modal = document.getElementById('donateModal');
     const content = document.getElementById('modalContent');
